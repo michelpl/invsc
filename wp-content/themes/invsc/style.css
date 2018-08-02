@@ -1,7 +1,73 @@
-.bg-dark {
-    background-color: #14151D!important;
+* {
+    font-family: 'Open Sans', sans-serif;!important;
 }
 
-.navbar-dark .navbar-toggler {
+@media (min-width: 1200px){}
+    .container {
+        max-width: 1444px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.bg-dark {
+    background-color: #0f1224 !important;
+}
+
+.nav-item button {
+    background-color: transparent;
+    border: none;
+    padding: 8px 15px;
+}
+
+.topBar {
+    padding: .9rem 1rem;
     color: #fff;
+}
+
+.topBar .navbar-toggler {
+    float: right;
+}
+
+.topBar a.social {
+    float: right;
+    color: #777;
+    margin: 0.1em 0.3em;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    padding: 4px;
+}
+
+.facebook:hover {
+    color: #4464AE!important;
+}
+
+.google:hover {
+    color: #DE4B45!important;
+}
+
+.carousel-item {
+
+}
+
+.carousel-caption {
+    top: 10%;
+}
+
+.carousel-caption.text-left p{
+    margin-top: 2rem;
+}
+
+.logoSlide {
+    margin: 1.5rem 0 0rem 0;
+}
+
+.btn-transparent {
+    border-color: #fff;
+    color: #fff;
+    font-size: 1rem;
+    padding: 15px 40px;
+    font-weight: 600;
 }
