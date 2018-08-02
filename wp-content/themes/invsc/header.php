@@ -154,31 +154,62 @@
     </div>
 
 
-    <!-- Marketing messaging and featurettes
+    <!-- First box
     ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
+    <div class="container">
 
-        <!-- Three columns of text below the carousel -->
         <div class="row">
-            <div class="col-lg-4">
-                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Heading</h2>
-                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <div id="news-box" class="col-lg-12">
+                <div class="row">
+                    <div id="first-news" class="col-lg-6">
+                        <div class="container">
+                            <h2><a href="#" class="color-primary">What is lorem ipsum?</a></h2>
+                            <p> Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+                        </div>
+                        <div class="container">
+                            <div class="addthis_inline_share_toolbox float-left"></div>
+                            <a class="read-more color-primary float-right" href="#">Ler post completo <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                    <div id="other-news" class="col-lg-4">
+                        <ul class="row">
+                            <li class="col-lg-6">
+                                <div class="container">
+                                    <h3><a href="#" class="">The Trip That Change  My Life</a></h3>
+                                    <p>Donec sed odio dui. a ac consectetur ac, vestibulum at... </p>
+                                </div>
+                            </li>
+                            <li class="col-lg-6">
+                                <div class="container">
+                                    <h3><a href="#" class="">The Trip That Change  My Life</a></h3>
+                                    <p>Donec sed odio dui. a ac consectetur ac, vestibulum at... </p>
+                                </div>
+                            </li>
+                            <li class="col-lg-6">
+                                <div class="container">
+                                    <h3><a href="#" class="">The Trip That Change  My Life</a></h3>
+                                    <p>Donec sed odio dui. a ac consectetur ac, vestibulum at... </p>
+                                </div>
+                            </li>
+                            <li class="col-lg-6">
+                                <div class="container">
+                                    <h3><a href="#" class="">The Trip That Change  My Life</a></h3>
+                                    <p>Donec sed odio dui. a ac consectetur ac, vestibulum at... </p>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div id="social-area" class="col-lg-2">
+                        <ul>
+                            <li class="float-left">
+                            </li>
+                            <li class="float-left">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
 
@@ -235,4 +266,5 @@
     </footer>
 </main>
 
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-507e079b058a06d3"></script>
 </body>

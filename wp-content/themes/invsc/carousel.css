@@ -92,3 +92,7 @@ body {
 .carousel-item-next, .carousel-item-prev, .carousel-item.active {
     margin-top: 62px;
 }
+
+.carousel-indicators {
+    bottom: 54px!important;
+}
