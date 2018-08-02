@@ -108,7 +108,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="first-slide" height="700" src="<?php echo get_theme_file_uri( 'assets/images/cross-background.png' ); ?>" alt="First slide">
+                <img class="first-slide" height="1900" src="<?php echo get_theme_file_uri( 'assets/images/cross-background.png' ); ?>" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption text-left">
                         <h1>Igreja de Nova Vida em São Cristóvão</h1>
@@ -122,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            <!--div class="carousel-item">
+            <div class="carousel-item">
                 <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption">
@@ -141,7 +141,7 @@
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
                     </div>
                 </div>
-            </div-->
+            </div>
         </div>
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

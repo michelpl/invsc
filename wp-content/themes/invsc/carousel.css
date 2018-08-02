@@ -88,3 +88,7 @@ body {
         margin-top: 7rem;
     }
 }
+
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+    margin-top: 62px;
+}
