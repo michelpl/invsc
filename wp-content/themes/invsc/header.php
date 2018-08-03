@@ -20,28 +20,20 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/carousel.css'; ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="<?php echo get_template_directory_uri() . '/assets/js/tabs.js'; ?>"></script>
+
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto" rel="stylesheet">
 <?php wp_head(); ?>
 </head>
 
-
-
-
-
-		<?php /* if ( has_nav_menu( 'top' ) ) : ?>
-			<div class="navigation-top">
-				<div class="wrap">
-					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-				</div><!-- .wrap -->
-			</div><!-- .navigation-top -->
-		<?php endif; */ ?>
 <body>
 
 <header>
@@ -145,11 +137,11 @@
         </div>
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
+            <span class="sr-only">Anterior</span>
         </a>
         <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
+            <span class="sr-only">P</span>
         </a>
     </div>
 
@@ -158,9 +150,8 @@
     ================================================== -->
 
     <div class="container">
-
         <div class="row">
-            <div id="news-box" class="col-lg-12">
+            <div id="news-box" class="col-lg-12 primary-shadow">
                 <div class="row">
                     <div id="first-news" class="col-lg-6">
                         <div id="first-news-text" class="container">
@@ -220,51 +211,28 @@
                 </div>
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
-
-
-        <!-- START THE FEATURETTES -->
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <!-- /END THE FEATURETTES -->
-
     </div><!-- /.container -->
+
+    <!-- First box
+================================================== -->
+
+    <div class="container">
+        <div id="event-box" class="row primary-shadow">
+            <div class="col-lg-3 ">
+                <ul class="tabs">
+                    <li class="active"><button role="event-tab">Tab1</button></li>
+                    <li><button role="schedule-tab">Tab2</button></li>
+                </ul>
+            </div>
+            <div class="col-lg-9">
+                <div class="tab-content">
+                    <div class="tab-item" id="event-tab">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque purus et facilisis volutpat. Mauris feugiat tellus sed erat lobortis, et euismod eros laoreet. Aenean hendrerit ac dui ac faucibus. Sed at porta turpis. Fusce lacus risus, congue ac enim vel, iaculis placerat odio. Vivamus posuere lectus at enim feugiat lacinia. Sed dolor nulla, imperdiet ac lacus gravida, euismod ultrices ante. Curabitur dolor erat, pharetra non nibh ut, mattis suscipit metus. Nam faucibus vitae felis ut vestibulum. Ut vel mauris dui. Aenean at felis at lorem molestie molestie. Curabitur molestie mollis odio vitae placerat.</div>
+                    <div class="tab-item" id="schedule-tab">Curabitur lorem urna, luctus eget nisi eget, pharetra imperdiet eros. Aliquam vel laoreet metus, ac rutrum mauris. Quisque ut dignissim tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed vel pretium libero. Sed placerat velit nec lorem sagittis, eu accumsan lacus ultrices. Integer fermentum mollis metus, non sagittis lorem finibus at. Praesent eget pharetra orci. Sed mattis urna eget tellus tristique, laoreet blandit tortor dictum. Pellentesque in ligula tortor. Nulla imperdiet orci ac dolor blandit lacinia. In ornare sapien semper, molestie leo et, semper massa.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <hr class="featurette-divider">
 
 
     <!-- FOOTER -->

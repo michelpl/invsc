@@ -89,7 +89,7 @@ body {
     }
 }
 
-.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+.carousel-caption  {
     margin-top: 62px;
 }
 
