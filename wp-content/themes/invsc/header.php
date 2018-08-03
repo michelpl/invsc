@@ -163,9 +163,9 @@
             <div id="news-box" class="col-lg-12">
                 <div class="row">
                     <div id="first-news" class="col-lg-6">
-                        <div class="container">
+                        <div id="first-news-text" class="container">
                             <h2><a href="#" class="color-primary">What is lorem ipsum?</a></h2>
-                            <p> Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+                            <p><a href="#">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</a></p>
                         </div>
                         <div class="container">
                             <div class="addthis_inline_share_toolbox float-left"></div>
@@ -177,25 +177,25 @@
                             <li class="col-lg-6">
                                 <div class="container">
                                     <h3><a href="#" class="">The Trip That Change  My Life</a></h3>
-                                    <p>Donec sed odio dui. a ac consectetur ac, vestibulum at... </p>
+                                    <p><a href="#">Donec sed odio dui. a ac consectetur ac, vestibulum at... </a></p>
                                 </div>
                             </li>
                             <li class="col-lg-6">
                                 <div class="container">
                                     <h3><a href="#" class="">The Trip That Change  My Life</a></h3>
-                                    <p>Donec sed odio dui. a ac consectetur ac, vestibulum at... </p>
+                                    <p><a href="#">Donec sed odio dui. a ac consectetur ac, vestibulum at... </a></p>
                                 </div>
                             </li>
                             <li class="col-lg-6">
                                 <div class="container">
                                     <h3><a href="#" class="">The Trip That Change  My Life</a></h3>
-                                    <p>Donec sed odio dui. a ac consectetur ac, vestibulum at... </p>
+                                    <p><a href="#">Donec sed odio dui. a ac consectetur ac, vestibulum at... </a></p>
                                 </div>
                             </li>
                             <li class="col-lg-6">
                                 <div class="container">
                                     <h3><a href="#" class="">The Trip That Change  My Life</a></h3>
-                                    <p>Donec sed odio dui. a ac consectetur ac, vestibulum at... </p>
+                                    <p><a href="#">Donec sed odio dui. a ac consectetur ac, vestibulum at... </a></p>
                                 </div>
                             </li>
                         </ul>
@@ -203,9 +203,17 @@
                     </div>
                     <div id="social-area" class="col-lg-2">
                         <ul>
-                            <li class="float-left">
+                            <li class="google float-left">
+                                <a class="text-white float-left" href="#" target="_blank" aria-label="Google Plus">
+                                    <i class="fa fa-google"></i>
+                                    <p class="float-right"><span>Seguir</span> <img src="<?php echo get_theme_file_uri( 'assets/images/plus-icon.png' ); ?>" ></p>
+                                </a>
                             </li>
-                            <li class="float-left">
+                            <li class="facebook float-left">
+                                <a class="text-white float-left" href="#" target="_blank" aria-label="Facebook">
+                                    <i class="fa fa-facebook-f"></i>
+                                    <p class="float-right"><span>Seguir</span> <img src="<?php echo get_theme_file_uri( 'assets/images/plus-icon.png' ); ?>" ></p>
+                                </a>
                             </li>
                         </ul>
                     </div>
