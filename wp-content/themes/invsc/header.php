@@ -30,7 +30,7 @@
     <script src="<?php echo get_template_directory_uri() . '/assets/js/tabs.js'; ?>"></script>
 
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans:700|Roboto" rel="stylesheet">
 <?php wp_head(); ?>
 </head>
 
@@ -216,23 +216,46 @@
     <!-- First box
 ================================================== -->
 
-    <div class="container">
-        <div id="event-box" class="row primary-shadow">
-            <div class="col-lg-3 ">
-                <ul class="tabs">
-                    <li class="active"><button role="event-tab">Tab1</button></li>
-                    <li><button role="schedule-tab">Tab2</button></li>
-                </ul>
-            </div>
-            <div class="col-lg-9">
-                <div class="tab-content">
-                    <div class="tab-item" id="event-tab">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque purus et facilisis volutpat. Mauris feugiat tellus sed erat lobortis, et euismod eros laoreet. Aenean hendrerit ac dui ac faucibus. Sed at porta turpis. Fusce lacus risus, congue ac enim vel, iaculis placerat odio. Vivamus posuere lectus at enim feugiat lacinia. Sed dolor nulla, imperdiet ac lacus gravida, euismod ultrices ante. Curabitur dolor erat, pharetra non nibh ut, mattis suscipit metus. Nam faucibus vitae felis ut vestibulum. Ut vel mauris dui. Aenean at felis at lorem molestie molestie. Curabitur molestie mollis odio vitae placerat.</div>
-                    <div class="tab-item" id="schedule-tab">Curabitur lorem urna, luctus eget nisi eget, pharetra imperdiet eros. Aliquam vel laoreet metus, ac rutrum mauris. Quisque ut dignissim tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed vel pretium libero. Sed placerat velit nec lorem sagittis, eu accumsan lacus ultrices. Integer fermentum mollis metus, non sagittis lorem finibus at. Praesent eget pharetra orci. Sed mattis urna eget tellus tristique, laoreet blandit tortor dictum. Pellentesque in ligula tortor. Nulla imperdiet orci ac dolor blandit lacinia. In ornare sapien semper, molestie leo et, semper massa.</div>
+
+
+    <div id="second-box" class="container">
+        <div class="row">
+            <div class="col-lg-12 primary-shadow">
+                <div id="event-box" class="row">
+                    <div id="tab-menu" class="col-lg-3">
+                        <ul class="tabs">
+                            <li class="active" role="event-tab">
+                                <button>
+                                    <span id="date">23</span>
+                                    <p><span>Calendário de eventos</span> <i class="arrow fa fa-angle-right"></i></p>
+                                </button>
+                            </li>
+                            <li role="schedule-tab">
+                                <button>
+                                    <img src="<?php echo get_theme_file_uri( 'assets/images/clock-icon-gray.png' ); ?>" alt="Calendário">
+                                    <p><span>Programação semanal</span> <i class="arrow fa fa-angle-right"></i></p>
+                                </button>
+                            </li>
+                            <li role="full-tab">
+                                <button id="full-tab-button" class="primary">
+                                    <i class="big-icon fa fa-clock"></i>
+                                    <p><span>Ver Programação completa</span> <i class="arrow fa fa-angle-right"></i></p>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content col-lg-9">
+                            <div class="tab-item" id="event-tab">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque purus et facilisis volutpat. Mauris feugiat tellus sed erat lobortis, et euismod eros laoreet. Aenean hendrerit ac dui ac faucibus. Sed at porta turpis. Fusce lacus risus, congue ac enim vel, iaculis placerat odio. Vivamus posuere lectus at enim feugiat lacinia. Sed dolor nulla, imperdiet ac lacus gravida, euismod ultrices ante. Curabitur dolor erat, pharetra non nibh ut, mattis suscipit metus. Nam faucibus vitae felis ut vestibulum. Ut vel mauris dui. Aenean at felis at lorem molestie molestie. Curabitur molestie mollis odio vitae placerat.</div>
+                            <div class="tab-item" id="schedule-tab">Curabitur lorem urna, luctus eget nisi eget, pharetra imperdiet eros. Aliquam vel laoreet metus, ac rutrum mauris. Quisque ut dignissim tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed vel pretium libero. Sed placerat velit nec lorem sagittis, eu accumsan lacus ultrices. Integer fermentum mollis metus, non sagittis lorem finibus at. Praesent eget pharetra orci. Sed mattis urna eget tellus tristique, laoreet blandit tortor dictum. Pellentesque in ligula tortor. Nulla imperdiet orci ac dolor blandit lacinia. In ornare sapien semper, molestie leo et, semper massa.</div>
+                            <div class="tab-item" id="full-tab">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque purus et facilisis volutpat. Mauris feugiat tellus sed erat lobortis, et euismod eros laoreet. Aenean hendrerit ac dui ac faucibus. Sed at porta turpis. Fusce lacus risus, congue ac enim vel, iaculis placerat odio. Vivamus posuere lectus at enim feugiat lacinia. Sed dolor nulla, imperdiet ac lacus gravida, euismod ultrices ante. Curabitur dolor erat, pharetra non nibh ut, mattis suscipit metus. Nam faucibus vitae felis ut vestibulum. Ut vel mauris dui. Aenean at felis at lorem molestie molestie. Curabitur molestie mollis odio vitae placerat.</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-        <hr class="featurette-divider">
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
 
 
     <!-- FOOTER -->
