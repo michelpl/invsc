@@ -224,7 +224,7 @@
         </div><!-- /.row -->
     </div><!-- /.container -->
 
-    <!-- First box
+    <!-- Event box
 ================================================== -->
 
 
@@ -256,9 +256,39 @@
                         </ul>
                     </div>
                     <div class="tab-content col-lg-9">
-                            <div class="tab-item" id="event-tab">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque purus et facilisis volutpat. Mauris feugiat tellus sed erat lobortis, et euismod eros laoreet. Aenean hendrerit ac dui ac faucibus. Sed at porta turpis. Fusce lacus risus, congue ac enim vel, iaculis placerat odio. Vivamus posuere lectus at enim feugiat lacinia. Sed dolor nulla, imperdiet ac lacus gravida, euismod ultrices ante. Curabitur dolor erat, pharetra non nibh ut, mattis suscipit metus. Nam faucibus vitae felis ut vestibulum. Ut vel mauris dui. Aenean at felis at lorem molestie molestie. Curabitur molestie mollis odio vitae placerat.</div>
-                            <div class="tab-item" id="schedule-tab">Curabitur lorem urna, luctus eget nisi eget, pharetra imperdiet eros. Aliquam vel laoreet metus, ac rutrum mauris. Quisque ut dignissim tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed vel pretium libero. Sed placerat velit nec lorem sagittis, eu accumsan lacus ultrices. Integer fermentum mollis metus, non sagittis lorem finibus at. Praesent eget pharetra orci. Sed mattis urna eget tellus tristique, laoreet blandit tortor dictum. Pellentesque in ligula tortor. Nulla imperdiet orci ac dolor blandit lacinia. In ornare sapien semper, molestie leo et, semper massa.</div>
-                            <div class="tab-item" id="full-tab">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque purus et facilisis volutpat. Mauris feugiat tellus sed erat lobortis, et euismod eros laoreet. Aenean hendrerit ac dui ac faucibus. Sed at porta turpis. Fusce lacus risus, congue ac enim vel, iaculis placerat odio. Vivamus posuere lectus at enim feugiat lacinia. Sed dolor nulla, imperdiet ac lacus gravida, euismod ultrices ante. Curabitur dolor erat, pharetra non nibh ut, mattis suscipit metus. Nam faucibus vitae felis ut vestibulum. Ut vel mauris dui. Aenean at felis at lorem molestie molestie. Curabitur molestie mollis odio vitae placerat.</div>
+                            <div class="tab-item" id="event-tab">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <div class="float-left date"><a href="#">26 Dez</a></div>
+                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
+                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
+                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="float-left date"><a href="#">26 Dez</a></div>
+                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
+                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
+                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="float-left date"><a href="#">26 Dez</a></div>
+                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
+                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
+                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
+                                        </div>
+                                    </li>
+                                    <li style="margin-bottom: -3px;">
+                                        <div class="float-left date"><a href="#">26 Dez</a></div>
+                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
+                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
+                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-item" id="schedule-tab"></div>
                         </div>
                     </div>
                 </div>

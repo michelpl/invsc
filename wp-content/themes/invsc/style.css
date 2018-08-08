@@ -46,6 +46,21 @@ ul li {
     color: #272B4F;
 }
 
+.btn-primary {
+    color: #fff!important;
+    background-color: #192a56;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 8px 10px;
+}
+
+.btn-primary:hover {
+    background-color: #273c75;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
 .bg-dark {
     background-color: #0f1224 !important;
 }
@@ -57,7 +72,7 @@ ul li {
 }
 
 .primary {
-    background-color: #E95E61!important;
+    background-color: #192a56!important;
     color: #E0E1E8;
 }
 
@@ -291,7 +306,7 @@ ul li {
 }
 
 #event-box {
-    padding: 3px;
+    padding: 3px 0 3px 3px;
     background-color: #fff;
 }
 
@@ -321,7 +336,7 @@ ul li {
     border: 0;
     width:  100%;
     text-transform: uppercase;
-    min-height: 169px;
+    min-height: 168px;
     padding: 0 10px;
 }
 
@@ -358,9 +373,7 @@ ul li {
     margin-left: 15px;
 }
 
-#event-box .tab-item {
-
-}
+#event-box .tab-item {width:  100%;}
 
 #event-box .tab-content {
     margin: 0;
@@ -382,4 +395,44 @@ li.active {
     -moz-box-shadow: inset 0px 0px 50px -19px rgba(74,74,74,1);
     box-shadow: inset 0px 0px 50px -19px rgba(74,74,74,1);
     border: 1px solid #f9f9f9;
+}
+
+.tab-content .tab-item {
+    width: 100%;
+}
+
+.tab-content .tab-item ul li {
+    width: 100%;
+    float: left;
+    margin-bottom: 3px;
+}
+
+.tab-content .tab-item ul li div {
+    background-color: #F4F3F3;
+    border-right: 3px solid #fff;
+    padding: 44px 15px;
+    text-align:  center;
+    font-size: 26px;
+    min-height: 80px;
+    margin-right: 0;
+}
+
+.tab-content .tab-item ul li div a{
+    color: #592224;
+}
+
+
+
+.tab-content .tab-item ul li .date {
+    width: 15%;
+
+}
+
+.tab-content .tab-item ul li .title{
+    background-color: #F4F3F3;
+    width: 85%;
+    border: 0;
+    background-position-x:  right;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
 }
