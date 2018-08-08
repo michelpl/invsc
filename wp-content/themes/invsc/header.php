@@ -28,6 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
     <script src="<?php echo get_template_directory_uri() . '/assets/js/tabs.js'; ?>"></script>
+    <script src="<?php echo get_template_directory_uri() . '/assets/js/show-hide.js'; ?>"></script>
 
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans:700|Roboto" rel="stylesheet">
@@ -37,58 +38,68 @@
 <body>
 
 <header>
-    <div class="collapse bg-dark" id="navbarHeader">
+    <div class="bg-dark fixed-top">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                    <h4 class="text-white">About</h4>
-                    <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+            <div class="row main-menu">
+                <div class="col-lg-12">
+                    <div class="logo float-left">
+                        <img width="130" src="<?php echo get_theme_file_uri( 'assets/images/logo-white.png' ); ?>" alt="Logo Igreja de Nova Vida São Cristóvão">
+                    </div>
+                    <div class="menu float-left">
+                        <button class="menu-icon float-left show-hide" type="button" data="hide-menu">
+                            <i class="fa fa-bars text-white" style="font-size:24px;"></i>
+                        </button>
+                        <ul class="list-unstyled list-inline float-left">
+                            <li><a href="#" class="text-white">Home</a></li>
+                            <li><a href="#" class="text-muted">Outros links</a></li>
+                        </ul>
+                    </div>
+                    <div class="social float-right">
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <a class="google text-muted" href="#" target="_blank" aria-label="Google Plus">
+                                    <i class="fa fa-google"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="facebook text-muted" href="#" target="_blank" aria-label="Facebook">
+                                    <i class="fa fa-facebook-f"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                    <h4 class="text-white">Contact</h4>
+            </div>
+        </div>
+
+        <div id="hide-menu" class="container show-hide-container" style="display: none;">
+            <div class="sub-menu float-left " >
+                <div class="float-left box">
+                    <h4>Outras Páginas</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                        <li><a href="#" class="text-white">Like on Facebook</a></li>
-                        <li><a href="#" class="text-white">Email me</a></li>
+                        <li><a href="#" class="text-muted">Outros links</a></li>
+                        <li><a href="#" class="text-muted">Lorem Ipsum Dolor</a></li>
+                        <li><a href="#" class="text-muted">Ipsum</a></li>
+                        <li><a href="#" class="text-muted">Outro sit anet</a></li>
                     </ul>
+                </div>
+                <div class="float-left box">
+                    <h4>Outras Páginas</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Mais um link</a></li>
+                        <li><a href="#" class="text-muted">Outros link</a></li>
+                        <li><a href="#" class="text-muted">Mais Delcaraus um</a></li>
+                        <li><a href="#" class="text-muted">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="close float-right">
+                    <button class="show-hide" data="hide-menu">
+                        <i class="fa fa-times"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Bootstrap">
-            <img width="130" src="<?php echo get_theme_file_uri( 'assets/images/logo-white.png' ); ?>" alt="Logo Igreja de Nova Vida São Cristóvão">
-        </a>
-
-        <div class="navbar-nav-scroll">
-            <ul class="navbar-nav bd-navbar-nav flex-row">
-                <li class="nav-item">
-                    <button class="" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fa fa-bars text-white" style="font-size:24px;"></i>
-                    </button>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#">Documentation</a>
-                </li>
-            </ul>
-        </div>
-
-        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-            <li class="nav-item">
-                <a class="nav-link p-2 google" href="#" target="_blank" aria-label="Google Plus">
-                    <i class="fa fa-google"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link p-2 facebook" href="#" target="_blank" aria-label="Facebook">
-                    <i class="fa fa-facebook-f"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
 </header>
 
 <main role="main">
@@ -115,7 +126,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+                <img class="first-slide" height="1900" src="<?php echo get_theme_file_uri( 'assets/images/slide2.jpg' ); ?>" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>Another example headline.</h1>
