@@ -1,5 +1,5 @@
 * {
-    font-family: 'Open Sans', sans-serif;!important
+    font-family: 'Roboto', sans-serif;!important
 }
 
 @media (min-width: 1200px){}
@@ -53,6 +53,7 @@ ul li {
     border-radius: 4px;
     font-size: 14px;
     padding: 8px 10px;
+    font-weight: 400!important;
 }
 
 .btn-primary:hover {
@@ -117,10 +118,13 @@ ul li {
 
 .main-menu .menu{
     margin-right: 20px;
+    font-weight: 600;
 }
 
 .main-menu .menu ul li{
     margin-right: 10px;
+    font-size:14px;
+    font-weight:800;
 }
 
 .main-menu .social ul li {
@@ -132,7 +136,11 @@ ul li {
 }
 
 .sub-menu .box ul li {
-    font-size: 12px;
+    font-size: 14px;
+}
+
+.sub-menu .box p{
+    color: #aaa;
 }
 
 .sub-menu .box {
@@ -141,6 +149,11 @@ ul li {
 
 .sub-menu .close {
 
+}
+
+.sub-menu .social {
+    text-align: right;
+    margin-right: 100px;
 }
 
 .sub-menu .close button {
@@ -195,8 +208,15 @@ ul li {
     margin: 90px 0 45px 0
 }
 
+#first-news-text h2{
+    color:#000;
+    text-transform: uppercase;
+    font-weight:400
+}
+
 #first-news-text a{
     color:#000;
+
 }
 
 #first-news .read-more {
@@ -301,8 +321,8 @@ ul li {
     padding: 0px 9px 0 5px;
 }
 
-#second-box {
-    margin-top: 50px;
+#first-box, #second-box, #third-box {
+    margin-bottom: 50px;
 }
 
 #event-box {
@@ -419,9 +439,8 @@ li.active {
 
 .tab-content .tab-item ul li div a{
     color: #592224;
+    font-weight: lighter;
 }
-
-
 
 .tab-content .tab-item ul li .date {
     width: 15%;
@@ -435,4 +454,76 @@ li.active {
     background-position-x:  right;
     background-repeat: no-repeat;
     background-position-y: bottom;
+}
+
+#third-box {
+    margin-top:85px;
+    background-color: #DBDBDB;
+    padding: 17px 0 58px 0;
+    -webkit-box-shadow: 0px -2px 5px -1px rgba(148,146,148,1);
+    -moz-box-shadow: 0px -2px 5px -1px rgba(148,146,148,1);
+    box-shadow: 0px -2px 5px -1px rgba(148,146,148,1);
+}
+
+#video-box {
+    background-color: white;
+    padding:15px;
+}
+
+#video-box div {
+    margin:0;
+    padding:0;
+    height: 350px;
+}
+
+#video-box .arrow {
+    background-repeat: no-repeat;
+    width: 9px;
+    height: 30px;
+    position: absolute;
+    right: -8px;
+    top: 163px;
+}
+
+#video-box .text{
+    padding: 50px 15px 0px 15px!important;
+    float: left;
+}
+
+#video-box .text h2 {font-size: 24px;}
+
+#video-box .text p {
+
+}
+
+#video-box .text .date {
+    font-size: 48px;
+    color: #fafafa;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.video-aux-text {
+    margin-top: 145px;
+    padding: 0;
+    padding: 0 0 0 25px;
+}
+
+.video-aux-text p {
+    margin: 0;
+    line-height: 33px;
+}
+
+.ultimas {font-size: 44px;color: #7B7A7A;font-weight: 100;}
+
+.pregacoes {font-size: 43px;color: #7B7A7A;font-weight: 800;margin-bottom: 20px!important;}
+
+.ver-todas {font-size: 36px;font-weight: 100;color: #192a56;}
+
+.ver-todas:hover {
+    text-decoration: none;
 }

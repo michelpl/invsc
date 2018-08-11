@@ -31,7 +31,7 @@
     <script src="<?php echo get_template_directory_uri() . '/assets/js/show-hide.js'; ?>"></script>
 
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans:700|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto:100,300" rel="stylesheet">
 <?php wp_head(); ?>
 </head>
 
@@ -75,8 +75,9 @@
         <div id="hide-menu" class="container show-hide-container" style="display: none;">
             <div class="sub-menu float-left " >
                 <div class="float-left box">
-                    <h4>Outras Páginas</h4>
+                    <h4>Mais Páginas</h4>
                     <ul class="list-unstyled">
+                        <li><p>Lorem Ipsum</p></li>
                         <li><a href="#" class="text-muted">Outros links</a></li>
                         <li><a href="#" class="text-muted">Lorem Ipsum Dolor</a></li>
                         <li><a href="#" class="text-muted">Ipsum</a></li>
@@ -86,16 +87,33 @@
                 <div class="float-left box">
                     <h4>Outras Páginas</h4>
                     <ul class="list-unstyled">
+                        <li><p>Lorem Ipsum</p></li>
                         <li><a href="#" class="text-muted">Mais um link</a></li>
                         <li><a href="#" class="text-muted">Outros link</a></li>
                         <li><a href="#" class="text-muted">Mais Delcaraus um</a></li>
                         <li><a href="#" class="text-muted">Contato</a></li>
                     </ul>
                 </div>
+                <div class="float-left box">
+                    <h4>Páginas a mais</h4>
+                    <ul class="list-unstyled">
+                        <li><p>Lorem Ipsum</p></li>
+                        <li><a href="#" class="text-muted">Contato</a></li>
+                        <li><a href="#" class="text-muted">Mais um link</a></li>
+                    </ul>
+                </div>
                 <div class="close float-right">
                     <button class="show-hide" data="hide-menu">
                         <i class="fa fa-times"></i>
                     </button>
+                </div>
+                <div class="social float-right box">
+                    <h4>Siga-nos</h4>
+                    <ul class="list-unstyled">
+                        <li><p>INVSC nas redes sociais!</p></li>
+                        <li><a href="#" class="text-muted">Google+</a></li>
+                        <li><a href="#" class="text-muted">Facebook</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -160,7 +178,7 @@
     <!-- First box
     ================================================== -->
 
-    <div class="container">
+    <div id="first-box" class="container">
         <div class="row">
             <div id="news-box" class="col-lg-12 primary-shadow">
                 <div class="row">
@@ -227,8 +245,6 @@
     <!-- Event box
 ================================================== -->
 
-
-
     <div id="second-box" class="container">
         <div class="row">
             <div class="col-lg-12 primary-shadow">
@@ -288,14 +304,77 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="tab-item" id="schedule-tab"></div>
+                            <div class="tab-item" id="schedule-tab">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <div class="float-left date"><a href="#">12 Jan</a></div>
+                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
+                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
+                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="float-left date"><a href="#">12 Fev</a></div>
+                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
+                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
+                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="float-left date"><a href="#">21 Mar</a></div>
+                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
+                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
+                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
+                                        </div>
+                                    </li>
+                                    <li style="margin-bottom: -3px;">
+                                        <div class="float-left date"><a href="#">31 Jul</a></div>
+                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
+                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
+                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-    </div><!-- /.container -->
+            </div>
+        </div>
+    </div>
 
+
+    <!-- Video box
+================================================== -->
+
+    <div id="third-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 primary-shadow">
+                    <div class="row" id="video-box">
+                        <div class="col-lg-8">
+                            <iframe width="100%" height="350" src="https://www.youtube.com/embed/5jLQV6OJZpE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="col-lg-4 text">
+                            <h2>Pellentesque pulvinar nulla adipiscing</h2>
+                            <p>Vestibulum molestie nunc elit. Aliquam ac tempus nunc.
+                            Praesent maximus pulvinar sollicitudin. In convallis
+                            elementum gravida.
+                            </p>
+                            <p class="date">26/12</p>
+                        </div>
+                        <div class="arrow" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/arrow-video-area.png' ); ?>')">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 video-aux-text">
+                    <p class="ultimas">Últimas</p>
+                    <p class="pregacoes">pregações</p>
+                    <a href="#" class="ver-todas">Ver todas</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
