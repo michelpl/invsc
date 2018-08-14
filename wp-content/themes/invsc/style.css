@@ -1,5 +1,6 @@
 * {
-    font-family: 'Roboto', sans-serif;!important
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
 }
 
 @media (min-width: 1200px){}
@@ -10,14 +11,19 @@
 
 body {
     background-color: #E5E2E2;
+    margin: 0;
+    padding: 0;
 }
+
+a:hover {
+    text-decoration: none;
+}
+
 h1 {
     font-size: 3rem;
 }
 
-h2 {
-
-}
+h2 {width: 59%;font-size: 41px;margin-top: 10px;}
 
 h3 {
     font-size: 18px;
@@ -26,7 +32,7 @@ h3 {
 h4 {
     font-size: 14px;
     font-weight: 700;
-    color: #ddd;
+    color: #C4C3C3;
 }
 
 ul {
@@ -40,6 +46,10 @@ ul li {
 
 .text-gray {
     color: #666!important;
+}
+
+.text-muted {
+    color:#8F8F8F!Important;
 }
 
 .color-primary {
@@ -100,6 +110,10 @@ ul li {
     color: #DE4B45!important;
 }
 
+.youtube:hover {
+    color: #FF000C!important;
+}
+
 .menu-icon {
     background-color: transparent;
     border: 0;
@@ -145,10 +159,15 @@ ul li {
 
 .sub-menu .box {
     min-width: 300px;
+    max-width: 400px;
+    padding: 0 15px 0 0;
 }
 
-.sub-menu .close {
-
+.sub-menu hr {
+    width: 160px;
+    background-color: #8F8F8F;
+    margin: 15px 0 25px 0;
+    text-align: left;
 }
 
 .sub-menu .social {
@@ -205,7 +224,7 @@ ul li {
 }
 
 #first-news-text {
-    margin: 90px 0 45px 0
+    margin: 73px 0 45px 0;
 }
 
 #first-news-text h2{
@@ -321,7 +340,7 @@ ul li {
     padding: 0px 9px 0 5px;
 }
 
-#first-box, #second-box, #third-box {
+#first-box, #second-box {
     margin-bottom: 50px;
 }
 
@@ -459,7 +478,7 @@ li.active {
 #third-box {
     margin-top:85px;
     background-color: #DBDBDB;
-    padding: 17px 0 58px 0;
+    padding: 17px 0 11px 0;
     -webkit-box-shadow: 0px -2px 5px -1px rgba(148,146,148,1);
     -moz-box-shadow: 0px -2px 5px -1px rgba(148,146,148,1);
     box-shadow: 0px -2px 5px -1px rgba(148,146,148,1);
@@ -526,4 +545,114 @@ li.active {
 
 .ver-todas:hover {
     text-decoration: none;
+}
+
+#fourth-box {
+    padding: 71px 0 120px 0;
+    background-repeat:  no-repeat;
+}
+
+#address-box {
+    background-color: white;
+    padding: 3px;
+}
+
+#address-box .row {
+    margin: 0;
+}
+
+#address-box .map {padding: 0;width: 100%;height: 520px;}
+
+
+#address-box .address {
+    margin: 0;
+    padding: 0;
+}
+
+#address-box .address {padding: 0 0 0 15px;}
+
+#address-box .address h2{}
+
+#address-box .address .text-box {
+    background-color:  #B7BCBD;
+    color: #fff;
+    float: left;
+    padding: 30px 30px 10px 30px;
+}
+
+#address-box .address .text-box {float: left;padding: 25px;width: 100%;}
+
+
+
+#address-box .address .text-box div i {
+    font-size: 30px;
+    float:  left;
+    width: 32px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+#address-box .address .text-box div .text {
+    padding: 0;
+    float: left;
+    margin: 0 0 0 10px;
+    width: 85%!important;
+}
+
+#address-box .address .text-box div .text p {margin-bottom: 0;float: left;font-weight: bold;font-size: 16px;}
+
+#address-box .address .text-box .phone {
+    float: left;
+    width:  100%;
+    margin-bottom: 15px;
+}
+
+#address-box .address .text-box .full-address {margin-bottom: 15px;float: left;}
+
+#address-box .address .text-box .mail {width: 100%;float: left;}
+
+
+#address-box .address .social {margin: 17px 0 0 30px;float: left;}
+
+#address-box .address .social p {
+    font-size: 25px;
+    margin: 7px 0 0 0;
+}
+
+#address-box .address .social p a {
+    color: #BEBEBE;
+}
+
+#address-box .address .social p a i {width: 32px;}
+
+#address-box .address .social p a span {
+    margin-left: 8px;
+    font-size: 16px;
+}
+
+#message {
+    margin-top: 95px;
+    font-style: italic;
+}
+
+#message h3 {
+    font-size: 36px;
+
+}
+
+#message p {
+    font-size: 26px
+}
+
+#pre-footer {
+    height: 15px;
+    width: 100%;
+    background-color: #474747;
+}
+
+footer {
+    height: 30rem;
+    margin: 0;
+    padding: 15px 0;
 }

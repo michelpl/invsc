@@ -13,7 +13,7 @@
  */
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js no-svg">
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -58,7 +58,12 @@
                         <ul class="list-unstyled list-inline">
                             <li>
                                 <a class="google text-muted" href="#" target="_blank" aria-label="Google Plus">
-                                    <i class="fa fa-google"></i>
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="youtube text-muted" href="#" target="_blank" aria-label="Youtube">
+                                    <i class="fa fa-youtube"></i>
                                 </a>
                             </li>
                             <li>
@@ -76,6 +81,7 @@
             <div class="sub-menu float-left " >
                 <div class="float-left box">
                     <h4>Mais Páginas</h4>
+                    <hr>
                     <ul class="list-unstyled">
                         <li><p>Lorem Ipsum</p></li>
                         <li><a href="#" class="text-muted">Outros links</a></li>
@@ -86,6 +92,7 @@
                 </div>
                 <div class="float-left box">
                     <h4>Outras Páginas</h4>
+                    <hr>
                     <ul class="list-unstyled">
                         <li><p>Lorem Ipsum</p></li>
                         <li><a href="#" class="text-muted">Mais um link</a></li>
@@ -96,6 +103,7 @@
                 </div>
                 <div class="float-left box">
                     <h4>Páginas a mais</h4>
+                    <hr>
                     <ul class="list-unstyled">
                         <li><p>Lorem Ipsum</p></li>
                         <li><a href="#" class="text-muted">Contato</a></li>
@@ -111,8 +119,9 @@
                     <h4>Siga-nos</h4>
                     <ul class="list-unstyled">
                         <li><p>INVSC nas redes sociais!</p></li>
-                        <li><a href="#" class="text-muted">Google+</a></li>
-                        <li><a href="#" class="text-muted">Facebook</a></li>
+                        <li><a href="#" class="text-muted google">Google+</a></li>
+                        <li><a href="#" class="text-muted facebook">Facebook</a></li>
+                        <li><a href="#" class="text-muted youtube">Youtube</a></li>
                     </ul>
                 </div>
             </div>
@@ -369,21 +378,121 @@
                 </div>
                 <div class="col-lg-4 video-aux-text">
                     <p class="ultimas">Últimas</p>
-                    <p class="pregacoes">pregações</p>
+                    <p class="pregacoes">mensagens</p>
                     <a href="#" class="ver-todas">Ver todas</a>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Address box
+================================================== -->
 
+    <div id="fourth-box"  style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/sky-background.png' ); ?>')">
+        <div class="container">
+            <div class="row">
+                <div id="address-box" class="col-lg-12">
+                    <div class="row">
+                        <div class="map col-lg-8 col-md-12">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.4302804264103!2d-43.226789684524455!3d-22.897495043297358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997eef0a6b158b%3A0xbe693bd5fe0e4348!2sRua+General+Argolo%2C+60+-+S%C3%A3o+Crist%C3%B3v%C3%A3o%2C+Rio+de+Janeiro+-+RJ%2C+20921-395!5e0!3m2!1spt-BR!2sbr!4v1534027492640" width="100%" height="520" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                        <div class="address col-lg-4">
+                            <h2>Localização e Contato</h2>
+                            <div class="text-box">
+                                <div class="phone">
+                                    <i class="fa fa-phone"></i>
+                                    <div class="text">
+                                        <p>Tel: (21)3890-3867<br>
+                                        Fax: (21)2585-1227</p>
+                                    </div>
+                                </div>
+                                <div class="full-address">
+                                    <i class="fa fa-map-marker"></i>
+                                    <div class="text">
+                                        <p>Rua General Argolo, 60</p>
+                                        <p>São Cristóvão, Rio de Janeiro - RJ, 20921-393</p>
+                                    </div>
+                                </div>
+                                <div class="mail">
+                                    <i class="fa fa-envelope"></i>
+                                    <div class="text">
+                                        <p>Informações: invsc@invsc.org.br</p>
+                                        <p>Pr Mauricio Lopes Fortunato: mauricio@invsc.org.br</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="social">
+                                <p><a href="#" class="facebook"><i class="fa fa-facebook-f"></i> <span>Facebook</span></a></p>
+                                <p><a href="#" class="youtube"><i class="fa fa-youtube"></i> <span>Youtube</span></a></p>
+                                <p><a href="#" class="google"><i class="fa fa-google-plus"></i> <span>Google+</span></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div id="message">
+                        <h3>Mm 13.1-12</h3>
+                        <p>"Sed tempus enim ac orci tincidunt, at sagittis nisi pellentesque. Nunc eleifend ex leo, vel maximus libero pharetra a. Orci varius natoque penatibus et
+                            magnis dis parturient montes."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
-    <footer class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    <div id="pre-footer"></div>
+    <footer class="bg-dark">
+        <div class="container">
+            <div class="sub-menu float-left">
+                <div class="float-left box">
+                    <h4>Páginas</h4>
+                    <hr>
+                    <ul class="list-unstyled">
+                        <li><p>Lorem Ipsum</p></li>
+                        <li><a href="#" class="text-muted">Outros links</a></li>
+                        <li><a href="#" class="text-muted">Lorem Ipsum Dolor</a></li>
+                        <li><a href="#" class="text-muted">Ipsum</a></li>
+                        <li><a href="#" class="text-muted">Outro sit anet</a></li>
+                    </ul>
+                </div>
+                <div class="float-left box">
+                    <h4>Sobre</h4>
+                    <hr>
+                    <ul class="list-unstyled">
+                        <li><p>Lorem Ipsum</p></li>
+                        <li>
+                            <p>
+                                Integer nibh massa, scelerisque in interdum eget, lobortis in nunc. Curabitur nec nisi erat. Suspendisse in nunc euismod, viverra mauris ac, scelerisque dolor.
+                            </p>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="float-left box">
+                    <h4>Programação semanal</h4>
+                    <hr>
+                    <ul class="list-unstyled">
+                        <li><p>Lorem Ipsum</p></li>
+                        <li><a href="#" class="text-muted">Contato</a></li>
+                        <li><a href="#" class="text-muted">Mais um link</a></li>
+                    </ul>
+                </div>
+                <div class="float-left box">
+                    <h4>Localização e contato</h4>
+                    <hr>
+                    <ul class="list-unstyled">
+                        <li><p>Lorem Ipsum</p></li>
+                        <li><a href="#" class="text-muted">Contato</a></li>
+                        <li><a href="#" class="text-muted">Mais um link</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+            </div>
+        </div>
     </footer>
 </main>
-
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-507e079b058a06d3"></script>
 </body>
