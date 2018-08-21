@@ -1,47 +1,59 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Invsc
- * @since 1.0
- * @version 1.2
- */
+<!-- FOOTER -->
+<div id="pre-footer"></div>
+<footer class="bg-dark">
+    <div class="container">
+        <div class="sub-menu float-left">
+            <div class="float-left box">
+                <h4>Páginas</h4>
+                <hr>
+                <ul class="list-unstyled">
+                    <li><p>Lorem Ipsum</p></li>
+                    <li><a href="#" class="text-muted">Outros links</a></li>
+                    <li><a href="#" class="text-muted">Lorem Ipsum Dolor</a></li>
+                    <li><a href="#" class="text-muted">Ipsum</a></li>
+                    <li><a href="#" class="text-muted">Outro sit anet</a></li>
+                </ul>
+            </div>
+            <div class="float-left box">
+                <h4>Sobre</h4>
+                <hr>
+                <ul class="list-unstyled">
+                    <li><p>Lorem Ipsum</p></li>
+                    <li>
+                        <p>
+                            Integer nibh massa, scelerisque in interdum eget, lobortis in nunc. Curabitur nec nisi erat. Suspendisse in nunc euismod, viverra mauris ac, scelerisque dolor.
+                        </p>
+                    </li>
 
-?>
-
-		</div><!-- #content -->
-
-		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="wrap">
-				<?php
-				get_template_part( 'template-parts/footer/footer', 'widgets' );
-
-				if ( has_nav_menu( 'social' ) ) : ?>
-					<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'invsc' ); ?>">
-						<?php
-							wp_nav_menu( array(
-								'theme_location' => 'social',
-								'menu_class'     => 'social-links-menu',
-								'depth'          => 1,
-								'link_before'    => '<span class="screen-reader-text">',
-								'link_after'     => '</span>' . invsc_get_svg( array( 'icon' => 'chain' ) ),
-							) );
-						?>
-					</nav><!-- .social-navigation -->
-				<?php endif;
-
-				get_template_part( 'template-parts/footer/site', 'info' );
-				?>
-			</div><!-- .wrap -->
-		</footer><!-- #colophon -->
-	</div><!-- .site-content-contain -->
-</div><!-- #page -->
-<?php wp_footer(); ?>
-
-</body>
-</html>
+                </ul>
+            </div>
+            <div class="float-left box">
+                <h4>Programação semanal</h4>
+                <hr>
+                <ul class="list-unstyled">
+                    <li><p>Lorem Ipsum</p></li>
+                    <li><a href="#" class="text-muted">Contato</a></li>
+                    <li><a href="#" class="text-muted">Mais um link</a></li>
+                </ul>
+            </div>
+            <div class="float-left box">
+                <h4>Localização e contato</h4>
+                <hr>
+                <ul class="list-unstyled">
+                    <li><p>Lorem Ipsum</p></li>
+                    <li><a href="#" class="text-muted">Contato</a></li>
+                    <li><a href="#" class="text-muted">Mais um link</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <p>&copy; <?php echo date('Y') ?> Igreja de Nova Vida em São Cristóvão <br> Todos os direitos reservados &middot;</p>
+            <div class="logo-circle">
+                <img width="30" src="<?php echo get_theme_file_uri( 'assets/images/logo-circular.png' ); ?>" alt="Logo Igreja de Nova Vida São Cristóvão">
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-507e079b058a06d3"></script>
