@@ -222,13 +222,11 @@
                                 </div>
                             </li>
                             <li class="col-lg-6">
-                                <div class="container">
-                                    <h3><a href="#" class="">The Trip That Change  My Life</a></h3>
-                                    <p><a href="#">Donec sed odio dui. a ac consectetur ac, vestibulum at... </a></p>
+                                <div id="all-news">
+                                    <p><a href="#">VER MAIS NOTÍCIAS <i class="fa fa-angle-right"></i></a></p>
                                 </div>
                             </li>
                         </ul>
-
                     </div>
                     <div id="social-area" class="col-lg-2">
                         <ul>
@@ -244,6 +242,7 @@
                                     <p class="float-right"><span>Seguir</span> <img src="<?php echo get_theme_file_uri( 'assets/images/plus-icon.png' ); ?>" ></p>
                                 </a>
                             </li>
+
                         </ul>
                     </div>
                 </div>
@@ -488,8 +487,13 @@
                     </ul>
                 </div>
             </div>
-            <div class="row">
-                <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; <?php echo date('Y') ?> Igreja de Nova Vida em São Cristóvão <br> Todos os direitos reservados &middot;</p>
+                <div class="logo-circle">
+                    <img width="30" src="<?php echo get_theme_file_uri( 'assets/images/logo-circular.png' ); ?>" alt="Logo Igreja de Nova Vida São Cristóvão">
+                </div>
             </div>
         </div>
     </footer>
