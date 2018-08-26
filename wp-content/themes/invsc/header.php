@@ -13,45 +13,118 @@
  */
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js no-svg">
+<html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/carousel.css'; ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="<?php echo get_template_directory_uri() . '/assets/js/tabs.js'; ?>"></script>
+    <script src="<?php echo get_template_directory_uri() . '/assets/js/show-hide.js'; ?>"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto:100,300" rel="stylesheet">
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'invsc' ); ?></a>
+<body>
 
-	<header id="masthead" class="site-header" role="banner">
+<header>
+    <div class="bg-dark fixed-top">
+        <div class="container">
+            <div class="row main-menu">
+                <div class="col-lg-12">
+                    <div class="logo float-left">
+                        <img width="130" src="<?php echo get_theme_file_uri( 'assets/images/logo-white.png' ); ?>" alt="Logo Igreja de Nova Vida São Cristóvão">
+                    </div>
+                    <div class="menu float-left">
+                        <button class="menu-icon float-left show-hide" type="button" data="hide-menu">
+                            <i class="fa fa-bars text-white" style="font-size:24px;"></i>
+                        </button>
+                        <ul class="list-unstyled list-inline float-left">
+                            <li><a href="#" class="text-white">Home</a></li>
+                            <li><a href="#" class="text-muted">Outros links</a></li>
+                        </ul>
+                    </div>
+                    <div class="social float-right">
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <a class="google text-muted" href="#" target="_blank" aria-label="Google Plus">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="youtube text-muted" href="#" target="_blank" aria-label="Youtube">
+                                    <i class="fa fa-youtube"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="facebook text-muted" href="#" target="_blank" aria-label="Facebook">
+                                    <i class="fa fa-facebook-f"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
-
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-			<div class="navigation-top">
-				<div class="wrap">
-					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-				</div><!-- .wrap -->
-			</div><!-- .navigation-top -->
-		<?php endif; ?>
-
-	</header><!-- #masthead -->
-
-	<?php
-
-	/*
-	 * If a regular post or page, and not the front page, show the featured image.
-	 * Using get_queried_object_id() here since the $post global may not be set before a call to the_post().
-	 */
-	if ( ( is_single() || ( is_page() && ! invsc_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) ) :
-		echo '<div class="single-featured-image-header">';
-		echo get_the_post_thumbnail( get_queried_object_id(), 'invsc-featured-image' );
-		echo '</div><!-- .single-featured-image-header -->';
-	endif;
-	?>
-
-	<div class="site-content-contain">
-		<div id="content" class="site-content">
+        <div id="hide-menu" class="container show-hide-container" style="display: none;">
+            <div class="sub-menu float-left " >
+                <div class="float-left box">
+                    <h4>Mais Páginas</h4>
+                    <hr>
+                    <ul class="list-unstyled">
+                        <li><p>Lorem Ipsum</p></li>
+                        <li><a href="#" class="text-muted">Outros links</a></li>
+                        <li><a href="#" class="text-muted">Lorem Ipsum Dolor</a></li>
+                        <li><a href="#" class="text-muted">Ipsum</a></li>
+                        <li><a href="#" class="text-muted">Outro sit anet</a></li>
+                    </ul>
+                </div>
+                <div class="float-left box">
+                    <h4>Outras Páginas</h4>
+                    <hr>
+                    <ul class="list-unstyled">
+                        <li><p>Lorem Ipsum</p></li>
+                        <li><a href="#" class="text-muted">Mais um link</a></li>
+                        <li><a href="#" class="text-muted">Outros link</a></li>
+                        <li><a href="#" class="text-muted">Mais Delcaraus um</a></li>
+                        <li><a href="#" class="text-muted">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="float-left box">
+                    <h4>Páginas a mais</h4>
+                    <hr>
+                    <ul class="list-unstyled">
+                        <li><p>Lorem Ipsum</p></li>
+                        <li><a href="#" class="text-muted">Contato</a></li>
+                        <li><a href="#" class="text-muted">Mais um link</a></li>
+                    </ul>
+                </div>
+                <div class="close float-right">
+                    <button class="show-hide" data="hide-menu">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="social float-right box">
+                    <h4>Siga-nos</h4>
+                    <ul class="list-unstyled">
+                        <li><p>INVSC nas redes sociais!</p></li>
+                        <li><a href="#" class="text-muted google">Google+</a></li>
+                        <li><a href="#" class="text-muted facebook">Facebook</a></li>
+                        <li><a href="#" class="text-muted youtube">Youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
