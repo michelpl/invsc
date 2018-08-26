@@ -225,6 +225,8 @@ ul li {
 
 #first-news-text {
     margin: 73px 0 45px 0;
+    height: 208px;
+    overflow: hidden;
 }
 
 #first-news-text h2{
@@ -264,6 +266,11 @@ ul li {
     padding: 0;
     background-color: #E4E4E4;
     height: 180px;
+}
+
+#other-news ul li .container p {
+    height: 96px;
+    overflow: hidden;
 }
 
 #other-news ul li .container p a{

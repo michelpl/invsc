@@ -16,11 +16,6 @@
  */
 ?>
 
-
-
-
-
-
 <?php
 /**
  * The front page template file
