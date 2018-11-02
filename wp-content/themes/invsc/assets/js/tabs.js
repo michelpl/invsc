@@ -6,11 +6,21 @@ $( function() {
 
     $(".tabs li").on("click", function () {
         tabSwitch($(this));
-    })
+    });
+
+    var tabName = window.location.hash;
+
+
+    if(typeof tabName != undefined) {
+        var role = tabName.split('#');
+        var element = $("li[role=" + role[1] + "-tab]");
+
+        element.click();
+    }
 } );
 
 function tabSwitch(tabSelected) {
-    tabItemId = tabSelected.attr("role");
+    var tabItemId = tabSelected.attr("role");
 
     $(".tab-item").hide();
     $('.tabs li').removeClass("active");
