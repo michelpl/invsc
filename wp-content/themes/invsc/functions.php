@@ -62,6 +62,10 @@ function invsc_setup() {
 	register_nav_menus( array(
 		'top'    => __( 'Top Menu', 'invsc' ),
 		'social' => __( 'Social Links Menu', 'invsc' ),
+        'sub-menu-1'    => __( 'Sub Menu 1', 'invsc' ),
+        'sub-menu-2'    => __( 'Sub Menu 2', 'invsc' ),
+        'sub-menu-3'    => __( 'Sub Menu 3', 'invsc' ),
+        'sub-menu-4'    => __( 'Sub Menu 4', 'invsc' ),
 	) );
 
 	/*
@@ -584,3 +588,151 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
+
+function wpt_event_post_type() {
+    $labels = array(
+        'name'               => __( 'Calendário' ),
+        'singular_name'      => __( 'Evento' ),
+        'add_new'            => __( 'Adicionar Novo Evento' ),
+        'add_new_item'       => __( 'Adicionar Novo Evento' ),
+        'edit_item'          => __( 'Editar Evento' ),
+        'new_item'           => __( 'Adicionar Novo Evento' ),
+        'view_item'          => __( 'Visualizar Evento' ),
+        'search_items'       => __( 'Procurar Evento' ),
+        'not_found'          => __( 'Nenhum evento encontrado' ),
+        'not_found_in_trash' => __( 'Nenhum evento na lixeira' )
+    );
+    $supports = array(
+        'title',
+        'editor',
+        'thumbnail',
+        'revisions',
+    );
+    $args = array(
+        'labels'               => $labels,
+        'supports'             => $supports,
+        'public'               => true,
+        'capability_type'      => 'post',
+        'rewrite'              => array( 'slug' => 'events' ),
+        'has_archive'          => true,
+        'menu_position'        => 2,
+        'menu_icon'            => 'dashicons-calendar-alt',
+        'register_meta_box_cb' => 'wpt_add_event_metaboxes',
+    );
+    register_post_type( 'events', $args );
+}
+add_action( 'init', 'wpt_event_post_type' );
+
+
+function wpt_add_event_metaboxes()
+{
+    add_meta_box(
+        'wpt_events_date',
+        'Data do evento',
+        'wpt_events_date',
+        'events',
+        'side',
+        'default'
+    );
+
+    add_meta_box(
+        'wpt_events_time',
+        'Hora do evento',
+        'wpt_events_time',
+        'events',
+        'side',
+        'default'
+    );
+}
+
+add_action( 'add_meta_boxes', 'add_events_metaboxes' );
+
+function wpt_events_date() {
+    global $post;
+    // Nonce field to validate form request came from current site
+    wp_nonce_field( basename( __FILE__ ), 'event_fields' );
+    // Get the date data if it's already been entered
+    $date = get_post_meta( $post->ID, 'date', true );
+    // Output the field
+    echo '<input type="date" name="date" value="' . esc_textarea( $date )  . '" class="widefat">';
+}
+
+function wpt_events_time() {
+    global $post;
+    // Nonce field to validate form request came from current site
+    wp_nonce_field( basename( __FILE__ ), 'event_fields' );
+    // Get the time data if it's already been entered
+    $time = get_post_meta( $post->ID, 'time', true );
+    // Output the field
+    echo '<input type="time" name="time" value="' . esc_textarea( $time )  . '" class="widefat">';
+}
+
+function wpt_save_events_date( $post_id, $post ) {
+    // Return if the user doesn't have edit permissions.
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return $post_id;
+    }
+    // Verify this came from the our screen and with proper authorization,
+    // because save_post can be triggered at other times.
+    if ( ! isset( $_POST['date'] ) || ! wp_verify_nonce( $_POST['event_fields'], basename(__FILE__) ) ) {
+        return $post_id;
+    }
+    // Now that we're authenticated, time to save the data.
+    // This sanitizes the data from the field and saves it into an array $events_meta.
+    $events_meta['date'] = esc_textarea( $_POST['date'] );
+    // Cycle through the $events_meta array.
+    // Note, in this example we just have one item, but this is helpful if you have multiple.
+    foreach ( $events_meta as $key => $value ) :
+        // Don't store custom data twice
+        if ( 'revision' === $post->post_type ) {
+            return;
+        }
+        if ( get_post_meta( $post_id, $key, false ) ) {
+            // If the custom field already has a value, update it.
+            update_post_meta( $post_id, $key, $value );
+        } else {
+            // If the custom field doesn't have a value, add it.
+            add_post_meta( $post_id, $key, $value);
+        }
+        if ( ! $value ) {
+            // Delete the meta key if there's no value
+            delete_post_meta( $post_id, $key );
+        }
+    endforeach;
+}
+add_action( 'save_post', 'wpt_save_events_date', 1, 2 );
+
+function wpt_save_events_time( $post_id, $post ) {
+    // Return if the user doesn't have edit permissions.
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return $post_id;
+    }
+    // Verify this came from the our screen and with proper authorization,
+    // because save_post can be triggered at other times.
+    if ( ! isset( $_POST['time'] ) || ! wp_verify_nonce( $_POST['event_fields'], basename(__FILE__) ) ) {
+        return $post_id;
+    }
+    // Now that we're authenticated, time to save the data.
+    // This sanitizes the data from the field and saves it into an array $events_meta.
+    $events_meta['time'] = esc_textarea( $_POST['time'] );
+    // Cycle through the $events_meta array.
+    // Note, in this example we just have one item, but this is helpful if you have multiple.
+    foreach ( $events_meta as $key => $value ) :
+        // Don't store custom data twice
+        if ( 'revision' === $post->post_type ) {
+            return;
+        }
+        if ( get_post_meta( $post_id, $key, false ) ) {
+            // If the custom field already has a value, update it.
+            update_post_meta( $post_id, $key, $value );
+        } else {
+            // If the custom field doesn't have a value, add it.
+            add_post_meta( $post_id, $key, $value);
+        }
+        if ( ! $value ) {
+            // Delete the meta key if there's no value
+            delete_post_meta( $post_id, $key );
+        }
+    endforeach;
+}
+add_action( 'save_post', 'wpt_save_events_time', 1, 2 );

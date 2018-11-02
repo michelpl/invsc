@@ -120,7 +120,6 @@ get_header(); ?>
                             <?php
                                 if ( $query->have_posts() ) {
                                     foreach ($query->posts as $index => $post) {
-
                                         if (strlen($post->post_excerpt) < 3) {
                                             $content = explode('<!--more-->', $post->post_content);
                                             $post->post_excerpt = $content[0];
@@ -147,8 +146,7 @@ get_header(); ?>
                             <li class="col-lg-6">
                                 <div id="all-news">
                                     <p><a href="#">VER MAIS NOTÍCIAS
-                                            <i
-                                                    class="fa fa-angle-right"></i></a>
+                                            <i class="fa fa-angle-right"></i></a>
                                     </p>
                                 </div>
                             </li>
@@ -156,19 +154,18 @@ get_header(); ?>
                     </div>
                     <div id="social-area" class="col-lg-2">
                         <ul>
-                            <li class="google float-left">
-                                <a class="text-white float-left" href="#" target="_blank" aria-label="Google Plus">
-                                    <i class="fa fa-google"></i>
-                                    <p class="float-right"><span>Seguir</span> <img src="<?php echo get_theme_file_uri( 'assets/images/plus-icon.png' ); ?>" ></p>
-                                </a>
-                            </li>
                             <li class="facebook float-left">
                                 <a class="text-white float-left" href="#" target="_blank" aria-label="Facebook">
                                     <i class="fa fa-facebook-f"></i>
                                     <p class="float-right"><span>Seguir</span> <img src="<?php echo get_theme_file_uri( 'assets/images/plus-icon.png' ); ?>" ></p>
                                 </a>
                             </li>
-
+                            <li class="youtube float-left">
+                                <a class="text-white float-left" href="#" target="_blank" aria-label="Youtube">
+                                    <i class="fa fa-youtube"></i>
+                                    <p class="float-right"><span>Seguir</span> <img src="<?php echo get_theme_file_uri( 'assets/images/plus-icon.png' ); ?>" ></p>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -187,7 +184,7 @@ get_header(); ?>
                             <ul class="tabs">
                                 <li class="active" role="event-tab">
                                     <button>
-                                        <span id="date">23</span>
+                                        <span id="date"><?php echo date('d'); ?></span>
                                         <p><span>Calendário de eventos</span> <i class="arrow fa fa-angle-right"></i></p>
                                     </button>
                                 </li>
@@ -208,66 +205,39 @@ get_header(); ?>
                         <div class="tab-content col-lg-9">
                             <div class="tab-item" id="event-tab">
                                 <ul class="list-unstyled">
-                                    <li>
-                                        <div class="float-left date"><a href="#">26 Dez</a></div>
-                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
-                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
-                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="float-left date"><a href="#">26 Dez</a></div>
-                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
-                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
-                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="float-left date"><a href="#">26 Dez</a></div>
-                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
-                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
-                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
-                                        </div>
-                                    </li>
-                                    <li style="margin-bottom: -3px;">
-                                        <div class="float-left date"><a href="#">26 Dez</a></div>
-                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
-                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
-                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="tab-item" id="schedule-tab">
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <div class="float-left date"><a href="#">12 Jan</a></div>
-                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
-                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
-                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="float-left date"><a href="#">12 Fev</a></div>
-                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
-                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
-                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="float-left date"><a href="#">21 Mar</a></div>
-                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
-                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
-                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
-                                        </div>
-                                    </li>
-                                    <li style="margin-bottom: -3px;">
-                                        <div class="float-left date"><a href="#">31 Jul</a></div>
-                                        <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
-                                            <a href="#" class="float-left">Lorem ipsum dolor sit amet</a>
-                                            <a class="btn btn-primary float-right" type="button">Saiba mais</a>
-                                        </div>
-                                    </li>
+                                    <?php
+                                    $args = [
+                                        'posts_per_page' => 4,
+                                        'post_type' => 'events',
+                                        'meta_key' => 'date',
+                                        'orderby' => 'meta_value',
+                                        'order' => 'asc'
+
+                                    ];
+                                    $queryEvents = new WP_Query($args);
+                                    if ($queryEvents->have_posts()) {
+
+
+                                        foreach ($queryEvents->posts as $post) {
+                                            $eventDate = get_post_meta( $post->ID, 'date');
+                                            $eventMonth = date("m", strtotime($eventDate[0]));
+                                            $eventDay = date("d", strtotime($eventDate[0]));
+                                            $ptMonth = $month[$eventMonth];
+
+                                            ;
+                                    ?>
+                                            <li>
+                                                <div class="float-left date"><a href="#"><?php echo $eventDay . ' ' . $month_abbrev[$ptMonth]; ?></a></div>
+                                                <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
+                                                    <a href="#" class="float-left"><?php echo $post->post_title; ?></a>
+                                                    <a class="btn btn-primary float-right" type="button">Saiba mais</a>
+                                                </div>
+                                            </li>
+
+                                    <?php
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </div>
                         </div>

@@ -91,6 +91,10 @@ ul li {
 
 }
 
+.menu ul li a {
+    color: #fff;
+}
+
 .list-inline li {
     display: inline;
 }
@@ -142,15 +146,31 @@ ul li {
 }
 
 .main-menu .social ul li {
-    margin-left: 5px;
+
 }
 
 .sub-menu {
     width: 100%;
 }
 
+.sub-menu li {
+    margin-bottom: 3px;
+}
+
+
+.sub-menu-ul li a{
+    color: #8F8F8F!Important
+
+}
+
+.sub-menu-ul li a:hover {
+    color:#fff!important;
+}
+
+
 .sub-menu .box ul li {
     font-size: 14px;
+
 }
 
 .sub-menu .box p{

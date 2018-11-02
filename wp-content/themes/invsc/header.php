@@ -49,10 +49,14 @@
                         <button class="menu-icon float-left show-hide" type="button" data="hide-menu">
                             <i class="fa fa-bars text-white" style="font-size:24px;"></i>
                         </button>
-                        <ul class="list-unstyled list-inline float-left">
-                            <li><a href="#" class="text-white">Home</a></li>
-                            <li><a href="#" class="text-muted">Outros links</a></li>
-                        </ul>
+                        <div class="float-left">
+                            <?php
+                            wp_nav_menu( array(
+                                'theme_location' => 'top',
+                                'menu_class'     => 'list-unstyled list-inline float-left',
+                            ) );
+                            ?>
+                        </div>
                     </div>
                     <div class="social float-right">
                         <ul class="list-unstyled list-inline">
@@ -80,35 +84,64 @@
         <div id="hide-menu" class="container show-hide-container" style="display: none;">
             <div class="sub-menu float-left " >
                 <div class="float-left box">
-                    <h4>Mais Páginas</h4>
-                    <hr>
-                    <ul class="list-unstyled">
-                        <li><p>Lorem Ipsum</p></li>
-                        <li><a href="#" class="text-muted">Outros links</a></li>
-                        <li><a href="#" class="text-muted">Lorem Ipsum Dolor</a></li>
-                        <li><a href="#" class="text-muted">Ipsum</a></li>
-                        <li><a href="#" class="text-muted">Outro sit anet</a></li>
-                    </ul>
+                    <?php
+                        $menu = wp_get_nav_menu_object("sub-menu-1" );
+                        if ($menu->count > 0) {
+
+                            echo "<h4>" . $menu->name . "</h4>";
+                            echo "<hr>";
+
+                            wp_nav_menu([
+                                'theme_location' => 'sub-menu-1',
+                                'menu_class'     => 'list-unstyled sub-menu-ul',
+                            ]);
+                        }
+                    ?>
                 </div>
                 <div class="float-left box">
-                    <h4>Outras Páginas</h4>
-                    <hr>
-                    <ul class="list-unstyled">
-                        <li><p>Lorem Ipsum</p></li>
-                        <li><a href="#" class="text-muted">Mais um link</a></li>
-                        <li><a href="#" class="text-muted">Outros link</a></li>
-                        <li><a href="#" class="text-muted">Mais Delcaraus um</a></li>
-                        <li><a href="#" class="text-muted">Contato</a></li>
-                    </ul>
+                    <?php
+                    $menu = wp_get_nav_menu_object("sub-menu-2" );
+                    if ($menu->count > 0) {
+
+                        echo "<h4>" . $menu->name . "</h4>";
+                        echo "<hr>";
+
+                        wp_nav_menu([
+                            'theme_location' => 'sub-menu-2',
+                            'menu_class'     => 'list-unstyled sub-menu-ul',
+                        ]);
+                    }
+                    ?>
                 </div>
                 <div class="float-left box">
-                    <h4>Páginas a mais</h4>
-                    <hr>
-                    <ul class="list-unstyled">
-                        <li><p>Lorem Ipsum</p></li>
-                        <li><a href="#" class="text-muted">Contato</a></li>
-                        <li><a href="#" class="text-muted">Mais um link</a></li>
-                    </ul>
+                    <?php
+                    $menu = wp_get_nav_menu_object("sub-menu-3" );
+                    if ($menu->count > 0) {
+
+                        echo "<h4>" . $menu->name . "</h4>";
+                        echo "<hr>";
+
+                        wp_nav_menu([
+                            'theme_location' => 'sub-menu-3',
+                            'menu_class'     => 'list-unstyled sub-menu-ul',
+                        ]);
+                    }
+                    ?>
+                </div>
+                <div class="float-left box">
+                    <?php
+                    $menu = wp_get_nav_menu_object("sub-menu-4" );
+                    if ($menu->count > 0) {
+
+                        echo "<h4>" . $menu->name . "</h4>";
+                        echo "<hr>";
+
+                        wp_nav_menu([
+                            'theme_location' => 'sub-menu-4',
+                            'menu_class'     => 'list-unstyled sub-menu-ul',
+                        ]);
+                    }
+                    ?>
                 </div>
                 <div class="close float-right">
                     <button class="show-hide" data="hide-menu">
