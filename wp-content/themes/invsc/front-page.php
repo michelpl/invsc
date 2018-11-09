@@ -245,68 +245,18 @@ get_header(); ?>
                             </div>
 
                             <div class="tab-item" id="schedule-tab">
-                                <div class="float-left title">
-                                    <h4>Domingos</h4>
-                                    <p>9:00h - EBD dos jovens (3º andar)</p>
-                                    <p>9:30h - EBD adultos (templo)</p>
-                                    <p>9:30h - EBD doutrinas básicas (2º andar)</p>
-                                    <p>10:30h - Culto</p>
-                                    <p>19:00h - CUlto</p>
-                                    <br>
-                                    <p><u>1º domingo do mês</u><br><br>
-                                    - Ceia e entrega dos alimentos para a cesta básica nos dois cultos<br><br>
-                                    - 8:00h 1º domingo do mês - Consagração dos ministérios</p>
+                                <?php
+                                $query = new WP_Query(['posts_per_page' => 4, 'cat' => 8, 'order' => 'ASC']);
+                                if ( $query->have_posts() ) {
+                                    foreach ($query->posts as $index => $post) { ?>
 
-                                </div>
-                                <div class="float-left title">
-                                    <h4>Terças</h4>
-                                    <p>19:30h Culto da família</p>
-                                    <br>
-                                    <p><u>1º terça do mês</u><br><br>
-                                        - Ceia e entrega dos alimentos para a cesta básica<br><br>
-                                </div>
-                                <div class="float-left title">
-                                    <h4>Quintas</h4>
-                                    <p>19:30h Culto</p>
-                                    <p><u>1º quinta do mês</u><br><br>
-                                        - Ceia e entrega dos alimentos para a cesta básica<br><br>
-                                </div>
-                                <div class="float-left title">
-                                    <h4>Sábados</h4>
-                                    <p>16:00h Reunião dos jovens</p>
-                                </div>
-                                    <?php
-                                    /*$args = [
-                                        'posts_per_page' => 4,
-                                        'post_type' => 'events',
-                                        'meta_key' => 'date',
-                                        'orderby' => 'meta_value',
-                                        'order' => 'asc'
-                                    ];
-                                    $queryEvents = new WP_Query($args);
-                                    if ($queryEvents->have_posts()) {
-
-                                        foreach ($queryEvents->posts as $post) {
-                                            $eventDate = get_post_meta( $post->ID, 'date');
-                                            $eventMonth = date("m", strtotime($eventDate[0]));
-                                            $eventDay = date("d", strtotime($eventDate[0]));
-                                            $ptMonth = $month[$eventMonth];
-
-                                            ;
-                                            ?>
-                                            <li>
-                                                <div class="float-left date"><a href="#"><?php echo $eventDay . ' ' . $month_abbrev[$ptMonth]; ?></a></div>
-                                                <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
-                                                    <a href="#" class="float-left"><?php echo $post->post_title; ?></a>
-                                                    <a class="btn btn-primary float-right" type="button">Saiba mais</a>
-                                                </div>
-                                            </li>
-                                            <?php
-                                        }
-                                    }*/
-                                    ?>
-                                </ul>
-
+                                    <div class="float-left title">
+                                        <h4><?php echo $post->post_title; ?></h4>
+                                        <?php echo $post->post_content; ?>
+                                    </div>
+                                    <?php }
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>

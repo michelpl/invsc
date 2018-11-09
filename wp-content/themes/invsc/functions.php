@@ -736,3 +736,30 @@ function wpt_save_events_time( $post_id, $post ) {
     endforeach;
 }
 add_action( 'save_post', 'wpt_save_events_time', 1, 2 );
+
+
+function fb_change_mce_options($initArray) {
+    $ext = 'pre[id|name|class|style],iframe[align|longdesc| name|width|height|frameborder|scrolling|marginheight| marginwidth|src]';
+
+    if ( isset( $initArray['extended_valid_elements'] ) ) {
+        $initArray['extended_valid_elements'] .= ',' . $ext;
+    } else {
+        $initArray['extended_valid_elements'] = $ext;
+    }
+
+    return $initArray;
+}
+add_filter('tiny_mce_before_init', 'fb_change_mce_options');
+
+add_filter('wp_default_editor', create_function('', 'return "html";'));
+
+function enable_more_buttons($buttons) {
+    $buttons[] = 'hr';
+    $buttons[] = 'fontselect';
+    $buttons[] = 'sup';
+
+    // etc, etc...
+
+    return $buttons;
+}
+add_filter("mce_buttons", "enable_more_buttons");
