@@ -184,20 +184,26 @@ get_header(); ?>
                             <ul class="tabs">
                                 <li class="active" role="event-tab">
                                     <button>
-                                        <span id="date"><?php echo date('d'); ?></span>
-                                        <p><span>Calendário de eventos</span> <i class="arrow fa fa-angle-right"></i></p>
+                                        <a href="#event">
+                                            <span id="date"><?php echo date('d'); ?></span>
+                                            <p><span>Calendário de eventos</span> <i class="arrow fa fa-angle-right"></i></p>
+                                        </a>
                                     </button>
                                 </li>
                                 <li role="schedule-tab">
                                     <button>
-                                        <img src="<?php echo get_theme_file_uri( 'assets/images/clock-icon-gray.png' ); ?>" alt="Calendário">
-                                        <p><span>Programação semanal</span> <i class="arrow fa fa-angle-right"></i></p>
+                                        <a href="#schedule">
+                                            <img src="<?php echo get_theme_file_uri( 'assets/images/clock-icon-gray.png' ); ?>" alt="Calendário">
+                                            <p><span>Programação semanal</span> <i class="arrow fa fa-angle-right"></i></p>
+                                        </a>
                                     </button>
                                 </li>
                                 <li role="full-tab">
                                     <button id="full-tab-button" class="primary">
-                                        <i class="big-icon fa fa-clock"></i>
-                                        <p><span>Ver Programação completa</span> <i class="arrow fa fa-angle-right"></i></p>
+                                        <a href="#" class="primary">
+                                            <i class="big-icon fa fa-clock"></i>
+                                            <p><span class="primary">Ver Programação completa</span> <i class="arrow fa fa-angle-right"></i></p>
+                                        </a>
                                     </button>
                                 </li>
                             </ul>
@@ -212,11 +218,9 @@ get_header(); ?>
                                         'meta_key' => 'date',
                                         'orderby' => 'meta_value',
                                         'order' => 'asc'
-
                                     ];
                                     $queryEvents = new WP_Query($args);
                                     if ($queryEvents->have_posts()) {
-
 
                                         foreach ($queryEvents->posts as $post) {
                                             $eventDate = get_post_meta( $post->ID, 'date');
@@ -233,12 +237,76 @@ get_header(); ?>
                                                     <a class="btn btn-primary float-right" type="button">Saiba mais</a>
                                                 </div>
                                             </li>
-
                                     <?php
                                         }
                                     }
                                     ?>
                                 </ul>
+                            </div>
+
+                            <div class="tab-item" id="schedule-tab">
+                                <div class="float-left title">
+                                    <h4>Domingos</h4>
+                                    <p>9:00h - EBD dos jovens (3º andar)</p>
+                                    <p>9:30h - EBD adultos (templo)</p>
+                                    <p>9:30h - EBD doutrinas básicas (2º andar)</p>
+                                    <p>10:30h - Culto</p>
+                                    <p>19:00h - CUlto</p>
+                                    <br>
+                                    <p><u>1º domingo do mês</u><br><br>
+                                    - Ceia e entrega dos alimentos para a cesta básica nos dois cultos<br><br>
+                                    - 8:00h 1º domingo do mês - Consagração dos ministérios</p>
+
+                                </div>
+                                <div class="float-left title">
+                                    <h4>Terças</h4>
+                                    <p>19:30h Culto da família</p>
+                                    <br>
+                                    <p><u>1º terça do mês</u><br><br>
+                                        - Ceia e entrega dos alimentos para a cesta básica<br><br>
+                                </div>
+                                <div class="float-left title">
+                                    <h4>Quintas</h4>
+                                    <p>19:30h Culto</p>
+                                    <p><u>1º quinta do mês</u><br><br>
+                                        - Ceia e entrega dos alimentos para a cesta básica<br><br>
+                                </div>
+                                <div class="float-left title">
+                                    <h4>Sábados</h4>
+                                    <p>16:00h Reunião dos jovens</p>
+                                </div>
+                                    <?php
+                                    /*$args = [
+                                        'posts_per_page' => 4,
+                                        'post_type' => 'events',
+                                        'meta_key' => 'date',
+                                        'orderby' => 'meta_value',
+                                        'order' => 'asc'
+                                    ];
+                                    $queryEvents = new WP_Query($args);
+                                    if ($queryEvents->have_posts()) {
+
+                                        foreach ($queryEvents->posts as $post) {
+                                            $eventDate = get_post_meta( $post->ID, 'date');
+                                            $eventMonth = date("m", strtotime($eventDate[0]));
+                                            $eventDay = date("d", strtotime($eventDate[0]));
+                                            $ptMonth = $month[$eventMonth];
+
+                                            ;
+                                            ?>
+                                            <li>
+                                                <div class="float-left date"><a href="#"><?php echo $eventDay . ' ' . $month_abbrev[$ptMonth]; ?></a></div>
+                                                <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
+                                                    <a href="#" class="float-left"><?php echo $post->post_title; ?></a>
+                                                    <a class="btn btn-primary float-right" type="button">Saiba mais</a>
+                                                </div>
+                                            </li>
+                                            <?php
+                                        }
+                                    }*/
+                                    ?>
+                                </ul>
+
                             </div>
                         </div>
                     </div>
