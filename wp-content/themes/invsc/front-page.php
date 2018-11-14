@@ -278,17 +278,32 @@ get_header(); ?>
                 <div class="row">
                     <div class="col-lg-8 primary-shadow">
                         <div class="row" id="video-box">
-                            <div class="col-lg-8">
-                                <iframe width="100%" height="350" src="https://www.youtube.com/embed/5jLQV6OJZpE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                            </div>
-                            <div class="col-lg-4 text">
-                                <h2>Pellentesque pulvinar nulla adipiscing</h2>
-                                <p>Vestibulum molestie nunc elit. Aliquam ac tempus nunc.
-                                    Praesent maximus pulvinar sollicitudin. In convallis
-                                    elementum gravida.
-                                </p>
-                                <p class="date">26/12</p>
-                            </div>
+                            <?php
+                                    $args = [
+                                        'posts_per_page' => 1,
+                                        'post_type' => 'videos',
+                                    ];
+                                    $queryVideos = new WP_Query($args);
+                                    if ($queryVideos->have_posts()) {
+
+                                        foreach ($queryVideos->posts as $post) {
+                                            $videoLink = get_post_meta($post->ID, 'link')[0];
+                                            $split = explode('?v=', $videoLink);
+                                            $videoId = $split[1];
+                            ?>
+                                            <div class="col-lg-8">
+                                                <iframe width="100%" height="350" src="https://www.youtube.com/embed/<?php echo $videoId; ?>?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="col-lg-4 text">
+                                                <h2><?php echo $post->post_title; ?></h2>
+                                                <p><?php echo $post->post_content; ?></p>
+                                                <p class="date"><?php echo date("d/m", strtotime($post->post_date)); ?></p>
+                                            </div>
+                            <?php
+                                        }
+                                    }
+                            ?>
+
                             <div class="arrow" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/arrow-video-area.png' ); ?>')">
                             </div>
                         </div>
@@ -296,7 +311,7 @@ get_header(); ?>
                     <div class="col-lg-4 video-aux-text">
                         <p class="ultimas">Últimas</p>
                         <p class="pregacoes">mensagens</p>
-                        <a href="#" class="ver-todas">Ver todas</a>
+                        <a href="https://www.youtube.com/user/mauriciofortunato/" class="ver-todas" target="_blank">Ver todas</a>
                     </div>
                 </div>
             </div>
