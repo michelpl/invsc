@@ -111,6 +111,7 @@ get_header(); ?>
                                     break;
                                 }
                             }
+                            wp_reset_postdata();
                         }
                     ?>
 
@@ -141,6 +142,7 @@ get_header(); ?>
                                             <?php
                                         }
                                     }
+                                    wp_reset_postdata();
                                 }
                             ?>
                             <li class="col-lg-6">
@@ -239,6 +241,7 @@ get_header(); ?>
                                             </li>
                                     <?php
                                         }
+                                        wp_reset_postdata();
                                     }
                                     ?>
                                 </ul>
@@ -256,6 +259,7 @@ get_header(); ?>
                                     </div>
                                     <?php }
                                 }
+                                wp_reset_postdata();
                                 ?>
                             </div>
                         </div>

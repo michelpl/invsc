@@ -589,6 +589,9 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
 
+/**
+ * Eventos
+ */
 function wpt_event_post_type() {
     $labels = array(
         'name'               => __( 'Calendário' ),
@@ -738,28 +741,100 @@ function wpt_save_events_time( $post_id, $post ) {
 add_action( 'save_post', 'wpt_save_events_time', 1, 2 );
 
 
-function fb_change_mce_options($initArray) {
-    $ext = 'pre[id|name|class|style],iframe[align|longdesc| name|width|height|frameborder|scrolling|marginheight| marginwidth|src]';
+/**
+ * Videos
+ */
 
-    if ( isset( $initArray['extended_valid_elements'] ) ) {
-        $initArray['extended_valid_elements'] .= ',' . $ext;
-    } else {
-        $initArray['extended_valid_elements'] = $ext;
+
+function wpt_video_post_type() {
+    $labels = array(
+        'name'               => __( 'Vídeos' ),
+        'singular_name'      => __( 'Vídeo' ),
+        'add_new'            => __( 'Adicionar Novo Vídeo' ),
+        'add_new_item'       => __( 'Adicionar Novo Vídeo do Youtube' ),
+        'edit_item'          => __( 'Editar Vídeo' ),
+        'new_item'           => __( 'Adicionar Novo Vídeo' ),
+        'view_item'          => __( 'Visualizar Vídeo' ),
+        'search_items'       => __( 'Procurar Vídeo' ),
+        'not_found'          => __( 'Nenhum vídeo encontrado' ),
+        'not_found_in_trash' => __( 'Nenhum vídeo na lixeira' )
+    );
+    $supports = array(
+        'title',
+        'editor',
+        'revisions',
+    );
+    $args = array(
+        'labels'               => $labels,
+        'supports'             => $supports,
+        'public'               => true,
+        'capability_type'      => 'post',
+        'rewrite'              => array( 'slug' => 'vídeos' ),
+        'has_archive'          => true,
+        'menu_position'        => 2,
+        'menu_icon'            => 'dashicons-video-alt3',
+        'register_meta_box_cb' => 'wpt_add_video_metaboxes',
+    );
+    register_post_type( 'videos', $args );
+}
+add_action( 'init', 'wpt_video_post_type' );
+
+
+function wpt_add_video_metaboxes()
+{
+    add_meta_box(
+        'wpt_video_link',
+        'Link do youtube',
+        'wpt_videos_link',
+        'videos',
+        'side',
+        'default'
+    );
+}
+
+add_action( 'add_meta_boxes', 'add_video_metaboxes' );
+
+function wpt_videos_link() {
+    global $post;
+    // Nonce field to validate form request came from current site
+    wp_nonce_field( basename( __FILE__ ), 'video_fields' );
+    // Get the date data if it's already been entered
+    $link = get_post_meta( $post->ID, 'link', true );
+    // Output the field
+    echo '<input type="text" name="link" value="' . esc_textarea( $link )  . '" class="widefat">';
+}
+
+function wpt_save_videos_link( $post_id, $post ) {
+    // Return if the user doesn't have edit permissions.
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return $post_id;
     }
-
-    return $initArray;
+    // Verify this came from the our screen and with proper authorization,
+    // because save_post can be triggered at other times.
+    if ( ! isset( $_POST['link'] ) || ! wp_verify_nonce( $_POST['video_fields'], basename(__FILE__) ) ) {
+        return $post_id;
+    }
+    // Now that we're authenticated, time to save the data.
+    // This sanitizes the data from the field and saves it into an array $events_meta.
+    $videos_meta['link'] = esc_textarea( $_POST['link'] );
+    // Cycle through the $events_meta array.
+    // Note, in this example we just have one item, but this is helpful if you have multiple.
+    foreach ( $videos_meta as $key => $value ) :
+        // Don't store custom data twice
+        if ( 'revision' === $post->post_type ) {
+            return;
+        }
+        if ( get_post_meta( $post_id, $key, false ) ) {
+            // If the custom field already has a value, update it.
+            update_post_meta( $post_id, $key, $value );
+        } else {
+            // If the custom field doesn't have a value, add it.
+            add_post_meta( $post_id, $key, $value);
+        }
+        if ( ! $value ) {
+            // Delete the meta key if there's no value
+            delete_post_meta( $post_id, $key );
+        }
+    endforeach;
 }
-add_filter('tiny_mce_before_init', 'fb_change_mce_options');
-
-add_filter('wp_default_editor', create_function('', 'return "html";'));
-
-function enable_more_buttons($buttons) {
-    $buttons[] = 'hr';
-    $buttons[] = 'fontselect';
-    $buttons[] = 'sup';
-
-    // etc, etc...
-
-    return $buttons;
-}
-add_filter("mce_buttons", "enable_more_buttons");
+add_action( 'save_post', 'wpt_save_videos_link', 1, 2 );
