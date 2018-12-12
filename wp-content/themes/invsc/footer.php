@@ -4,28 +4,18 @@
     <div class="container">
         <div class="sub-menu float-left">
             <div class="float-left box">
-                <h4>Páginas</h4>
-                <hr>
-                <ul class="list-unstyled">
-                    <li><p>Lorem Ipsum</p></li>
-                    <li><a href="#" class="text-muted">Outros links</a></li>
-                    <li><a href="#" class="text-muted">Lorem Ipsum Dolor</a></li>
-                    <li><a href="#" class="text-muted">Ipsum</a></li>
-                    <li><a href="#" class="text-muted">Outro sit anet</a></li>
-                </ul>
+                <?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+                    <div class="widget-area">
+                        <?php dynamic_sidebar( 'sidebar-2' ); ?>
+                    </div><!-- .widget-area -->
+                <?php endif; ?>
             </div>
             <div class="float-left box">
-                <h4>Sobre</h4>
-                <hr>
-                <ul class="list-unstyled">
-                    <li><p>Lorem Ipsum</p></li>
-                    <li>
-                        <p>
-                            Integer nibh massa, scelerisque in interdum eget, lobortis in nunc. Curabitur nec nisi erat. Suspendisse in nunc euismod, viverra mauris ac, scelerisque dolor.
-                        </p>
-                    </li>
-
-                </ul>
+                <?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
+                    <div class="widget-area">
+                        <?php dynamic_sidebar( 'sidebar-3' ); ?>
+                    </div><!-- .widget-area -->
+                <?php endif; ?>
             </div>
             <div class="float-left box">
                 <h4>Programação semanal</h4>
@@ -56,4 +46,4 @@
         </div>
     </div>
 </footer>
-<!--script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-507e079b058a06d3"></script-->
+
