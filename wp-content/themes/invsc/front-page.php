@@ -334,22 +334,31 @@ get_header(); ?>
                                     <div class="phone">
                                         <i class="fa fa-phone"></i>
                                         <div class="text">
-                                            <p>Tel: (21)3890-3867<br>
-                                                Fax: (21)2585-1227</p>
+                                            <?php if ( is_active_sidebar( 'phone' ) ) : ?>
+                                                <div class="widget-area">
+                                                    <?php dynamic_sidebar( 'phone' ); ?>
+                                                </div><!-- .widget-area -->
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                     <div class="full-address">
                                         <i class="fa fa-map-marker"></i>
                                         <div class="text">
-                                            <p>Rua General Argolo, 60</p>
-                                            <p>São Cristóvão, Rio de Janeiro - RJ, 20921-393</p>
+                                            <?php if ( is_active_sidebar( 'address' ) ) : ?>
+                                                <div class="widget-area">
+                                                    <?php dynamic_sidebar( 'address' ); ?>
+                                                </div><!-- .widget-area -->
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                     <div class="mail">
                                         <i class="fa fa-envelope"></i>
                                         <div class="text">
-                                            <p>Informações: invsc@invsc.org.br</p>
-                                            <p>Pr Mauricio Lopes Fortunato: mauricio@invsc.org.br</p>
+                                            <?php if ( is_active_sidebar( 'email' ) ) : ?>
+                                                <div class="widget-area">
+                                                    <?php dynamic_sidebar( 'email' ); ?>
+                                                </div><!-- .widget-area -->
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -358,14 +367,17 @@ get_header(); ?>
                                     <p><a href="#" class="youtube"><i class="fa fa-youtube"></i> <span>Youtube</span></a></p>
                                     <p><a href="#" class="google"><i class="fa fa-google-plus"></i> <span>Google+</span></a></p>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div id="message">
-                            <h3>Mm 13.1-12</h3>
-                            <p>"Sed tempus enim ac orci tincidunt, at sagittis nisi pellentesque. Nunc eleifend ex leo, vel maximus libero pharetra a. Orci varius natoque penatibus et
-                                magnis dis parturient montes."</p>
+                            <?php if ( is_active_sidebar( 'verse' ) ) : ?>
+                                <div class="widget-area">
+                                    <?php dynamic_sidebar( 'verse' ); ?>
+                                </div><!-- .widget-area -->
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

@@ -685,12 +685,16 @@ li.active {
     margin-bottom: 15px;
 }
 
-#address-box .address .text-box .full-address {margin-bottom: 15px;float: left;}
+#address-box .row p{
+    width:100%;
+}
+
+#address-box .address .text-box .full-address {margin-bottom: 15px;float: left;width: 100%;}
 
 #address-box .address .text-box .mail {width: 100%;float: left;}
 
 
-#address-box .address .social {margin: 17px 0 0 30px;float: left;}
+#address-box .address .social {margin: 0px 0 0 30px;float: left;}
 
 #address-box .address .social p {
     font-size: 25px;

@@ -130,6 +130,10 @@ function invsc_setup() {
 				'text_about',
 				'search',
 			),
+            'phone' => array(),
+            'address' => array(),
+            'mail' => array(),
+            'verse' => array(),
 		),
 
 		// Specify the core-defined pages to create and add custom thumbnails to some of them.
@@ -344,6 +348,42 @@ function invsc_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+    register_sidebar( array(
+        'name'          => __( 'Telefones', 'invsc' ),
+        'id'            => 'phone',
+        'description'   => __( 'Adicione os telefones da igreja aqui (no máximo 2)', 'invsc' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Endereço', 'invsc' ),
+        'id'            => 'address',
+        'description'   => __( 'Adicione o endereço da igreja aqui', 'invsc' ),
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Endereços de e-mail', 'invsc' ),
+        'id'            => 'email',
+        'description'   => __( 'Adicione os e-mails da igreja aqui', 'invsc' ),
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Versículo bíblico', 'invsc' ),
+        'id'            => 'verse',
+        'description'   => __( 'Adicione um versículo bíblico que será exibido na home', 'invsc' ),
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
 }
 add_action( 'widgets_init', 'invsc_widgets_init' );
 
