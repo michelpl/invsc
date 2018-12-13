@@ -20,15 +20,17 @@ wi {
     }
 }
 
-@media (min-width: 400px){
-    .main-menu .logo {
-        margin-bottom: 0px;
+@media (min-width: 415px){
+    #video-box .text .date {
+        font-size: 48px!important;
     }
 
-
+    .carousel-caption.text-left p {
+        margin-top: 2rem!important;
+    }
 }
 
-@media (min-width: 720px){
+@media (min-width: 767px){
     .tab-content .tab-item ul li .title {
         width: 76%!important;
         height:auto;
@@ -39,6 +41,27 @@ wi {
         height:auto;
     }
 
+    .sub-menu .box {
+        width: 21%;
+        height:400px;
+    }
+
+    h2 {
+        width: 59%!important;
+    }
+
+    .logoSlide {
+        margin: 1.5rem 0 0rem 0!important;
+        width: 175px!important;
+    }
+
+    .main-menu .logo {
+        margin-bottom: 0px!important;
+    }
+
+    #event-box {
+        padding: 3px 0 3px 0px!important;
+    }
 
 }
 @media (min-width: 860px){
@@ -46,7 +69,33 @@ wi {
         width:25%!important;
         height: 520px;
     }
+
+    h1 {
+        font-size: 3rem!important;
+    }
+
+
 }
+
+@media (min-width: 992px){
+    #video-box .arrow{
+        display:block!important;
+    }
+
+    .video-aux-text {
+        margin-top: 145px!important;
+    }
+}
+
+@media (min-width: 1100px){
+
+
+    #all-news p a {
+        font-size: 26px!important;
+        margin: 50px 0 0 40px!important;
+    }
+}
+
 .container {
     max-width: 1444px;
 }
@@ -63,10 +112,10 @@ a:hover {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
-h2 {width: 59%;font-size: 41px;margin-top: 10px;}
+h2 {font-size: 41px;margin-top: 10px;}
 
 h3 {
     font-size: 18px;
@@ -217,12 +266,13 @@ ul li {
 
 .sub-menu .box p{
     color: #aaa;
+    margin-top: 1rem;
 }
 
 .sub-menu .box {
     min-width: 235px;
-    max-width: 400px;
-    padding: 0 15px 0 0;
+    max-width: 100%;
+    padding: 0 70px 0 0;
     margin-bottom: 100px;
 }
 
@@ -257,18 +307,19 @@ ul li {
 }
 
 .carousel-caption.text-left p{
-    margin-top: 2rem;
+    margin-top: 0.5rem;
 }
 
 .logoSlide {
-    margin: 1.5rem 0 0rem 0;
+    margin: 0.2rem 0 0rem 0;
+    width: 96px;
 }
 
 .btn-transparent {
     border-color: #fff;
     color: #fff;
-    font-size: 1rem;
-    padding: 15px 40px;
+    font-size: 0.8rem;
+    padding: 10px 20px;
     font-weight: 600;
 }
 
@@ -349,12 +400,12 @@ ul li {
 
 #all-news p a {
     color: white!important;
-    font-size: 26px;
+    font-size: 20px;
     width: 150px;
     font-weight: 800;
     padding: 0;
     float: left;
-    margin: 50px 0 0 50px;
+    margin: 62px 0 0 32px;
 }
 
 #social-area {
@@ -434,7 +485,7 @@ ul li {
 }
 
 #event-box {
-    padding: 3px 0 3px 3px;
+    padding: 3px 0 3px 0px;
     background-color: #fff;
 }
 
@@ -511,7 +562,7 @@ ul li {
 
 #event-box .tab-content {
     margin: 0;
-    padding: 0 3px;
+    padding: 0 0px;
 }
 
 #full-tab-button {
@@ -623,6 +674,7 @@ li.active {
     position: absolute;
     right: -8px;
     top: 163px;
+    display: none;
 }
 
 #video-box .text{
@@ -637,7 +689,7 @@ li.active {
 }
 
 #video-box .text .date {
-    font-size: 48px;
+    font-size: 33px;
     color: #fafafa;
     text-align: right;
     position: absolute;
@@ -648,7 +700,7 @@ li.active {
 }
 
 .video-aux-text {
-    margin-top: 145px;
+    margin-top: -132px;
     padding: 0;
     padding: 0 0 0 25px;
 }
@@ -658,11 +710,11 @@ li.active {
     line-height: 33px;
 }
 
-.ultimas {font-size: 44px;color: #7B7A7A;font-weight: 100;}
+.ultimas {font-size: 43px;color: #7B7A7A;font-weight: 100;}
 
-.pregacoes {font-size: 43px;color: #7B7A7A;font-weight: 800;margin-bottom: 20px!important;}
+.pregacoes {font-size: 42px;color: #7B7A7A;font-weight: 800;margin-bottom: 20px!important;}
 
-.ver-todas {font-size: 36px;font-weight: 100;color: #192a56;}
+.ver-todas {font-size: 34px;font-weight: 100;color: #192a56;}
 
 .ver-todas:hover {
     text-decoration: none;
@@ -690,7 +742,7 @@ li.active {
     padding: 0;
 }
 
-#address-box .address {padding: 0 0 0 15px;}
+#address-box .address {padding: 0px 0 0 5px;}
 
 #address-box .address h2{}
 
@@ -802,4 +854,9 @@ footer a, footer a:active, footer a:visited{
 
 footer a:hover{
     color: #c1c1c1!important;
+}
+
+.full-width {
+    /* width: 100%!important; */
+    /* max-width: 100%!important; */
 }

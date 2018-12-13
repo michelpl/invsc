@@ -40,7 +40,7 @@
 <header>
     <div class="bg-dark fixed-top">
         <div class="container">
-            <div class="row main-menu">
+            <div class="row main-menu" style="margin: 0">
                 <div class="col-lg-12">
                     <div class="logo float-left">
                         <img width="130" src="<?php echo get_theme_file_uri( 'assets/images/logo-white.png' ); ?>" alt="Logo Igreja de Nova Vida São Cristóvão">

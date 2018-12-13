@@ -18,8 +18,8 @@ get_header(); ?>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <!--li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li-->
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -37,7 +37,7 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
+            <!--div class="carousel-item">
                 <img class="first-slide" height="1900" src="<?php echo get_theme_file_uri( 'assets/images/slide2.jpg' ); ?>" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption">
@@ -56,7 +56,7 @@ get_header(); ?>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
                     </div>
                 </div>
-            </div>
+            </div-->
         </div>
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

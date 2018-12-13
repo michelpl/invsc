@@ -18,21 +18,40 @@
                 <?php endif; ?>
             </div>
             <div class="float-left box">
+                <h4>Localização</h4>
+                <hr>
+                <ul class="list-unstyled">
+                    <li><p>Endereço</p></li>
+                    <li><span class="text-muted">Rua General Argolo, 60, São Cristóvão</span></li>
+                    <li><span class="text-muted">Rio de Janeiro - RJ</span></li>
+                    <li><span class="text-muted">CEP 20921-395</span></li>
+                    <li><p>Telefones</p></li>
+                    <li><span class="text-muted">Tel: (21)3890-3867</span></li>
+                    <li><span class="text-muted">Fax: (21)2585-1227</span></li>
+                    <li><p>E-mails</p></li>
+                    <li><span class="text-muted">Informações: invsc@invsc.org.br</span></li>
+                    <li><span class="text-muted">Pr Mauricio Lopes Fortunato: mauricio@invsc.org.br</span></li>
+                </ul>
+            </div>
+            <!--div class="float-left box">
+                <h4>Contato</h4>
+                <hr>
+                <ul class="list-unstyled">
+                    <li><p>Telefones</p></li>
+                    <li><span class="text-muted">Tel: (21)3890-3867</span></li>
+                    <li><span class="text-muted">Fax: (21)2585-1227</span></li>
+                    <li><p>E-mails</p></li>
+                    <li><span class="text-muted">Informações: invsc@invsc.org.br</span></li>
+                    <li><span class="text-muted">Pr Mauricio Lopes Fortunato: mauricio@invsc.org.br</span></li>
+                </ul>
+            </div-->
+            <div class="float-left box full-width">
                 <h4>Programação semanal</h4>
                 <hr>
                 <ul class="list-unstyled">
-                    <li><p>Lorem Ipsum</p></li>
-                    <li><a href="#" class="text-muted">Contato</a></li>
-                    <li><a href="#" class="text-muted">Mais um link</a></li>
-                </ul>
-            </div>
-            <div class="float-left box">
-                <h4>Localização e contato</h4>
-                <hr>
-                <ul class="list-unstyled">
-                    <li><p>Lorem Ipsum</p></li>
-                    <li><a href="#" class="text-muted">Contato</a></li>
-                    <li><a href="#" class="text-muted">Mais um link</a></li>
+                    <li><p>Domingos</p></li>
+                    <li><span class="text-muted">Contato</span></li>
+                    <li><span class="text-muted">Mais um link</span></li>
                 </ul>
             </div>
         </div>
