@@ -44,11 +44,6 @@ function invsc_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
 	add_theme_support( 'post-thumbnails' );
 
 	add_image_size( 'invsc-featured-image', 2000, 1200, true );
@@ -58,7 +53,6 @@ function invsc_setup() {
 	// Set the default content width.
 	$GLOBALS['content_width'] = 525;
 
-	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'top'    => __( 'Top Menu', 'invsc' ),
 		'social' => __( 'Social Links Menu', 'invsc' ),
@@ -348,6 +342,51 @@ function invsc_widgets_init() {
 		'before_title'  => '<h4>',
 		'after_title'   => '</h4><hr>',
 	) );
+    register_sidebar( array(
+        'name'          => __( 'Footer 3', 'invsc' ),
+        'id'            => 'sidebar-4',
+        'description'   => __( 'Add widgets here to appear in your footer.', 'invsc' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4><hr>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Programação: domingos', 'invsc' ),
+        'id'            => 'sidebar-5',
+        'description'   => __( 'Add widgets here to appear in your footer.', 'invsc' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4><hr>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Programação: terças', 'invsc' ),
+        'id'            => 'sidebar-6',
+        'description'   => __( 'Add widgets here to appear in your footer.', 'invsc' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4><hr>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Programação: quintas', 'invsc' ),
+        'id'            => 'sidebar-7',
+        'description'   => __( 'Add widgets here to appear in your footer.', 'invsc' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4><hr>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Programação: sábados', 'invsc' ),
+        'id'            => 'sidebar-8',
+        'description'   => __( 'Add widgets here to appear in your footer.', 'invsc' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4><hr>',
+    ) );
     register_sidebar( array(
         'name'          => __( 'Telefones', 'invsc' ),
         'id'            => 'phone',

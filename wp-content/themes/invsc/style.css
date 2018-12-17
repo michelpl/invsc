@@ -41,7 +41,7 @@ wi {
         height:auto;
     }
 
-    .sub-menu .box {
+    .footer .box {
         width: 21%;
         height:400px;
     }
@@ -84,6 +84,10 @@ wi {
 
     .video-aux-text {
         margin-top: 145px!important;
+    }
+
+    #about {
+        width: 51%!important;
     }
 }
 
@@ -259,20 +263,20 @@ ul li {
 }
 
 
-.sub-menu .box ul li {
+.footer .box, .sub-menu .box ul li {
     font-size: 14px;
 
 }
 
-.sub-menu .box p{
+.footer .box, .sub-menu .box p{
     color: #aaa;
     margin-top: 1rem;
 }
 
-.sub-menu .box {
+.footer .box, .sub-menu .box {
     min-width: 235px;
     max-width: 100%;
-    padding: 0 70px 0 0;
+    padding: 0 30px;
     margin-bottom: 100px;
 }
 
