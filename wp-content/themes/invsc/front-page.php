@@ -157,13 +157,13 @@ get_header(); ?>
                     <div id="social-area" class="col-lg-2">
                         <ul>
                             <li class="facebook float-left">
-                                <a class="text-white float-left" href="#" target="_blank" aria-label="Facebook">
+                                <a class="text-white float-left" href="https://facebook.com/invsc" target="_blank" aria-label="Facebook">
                                     <i class="fa fa-facebook-f"></i>
                                     <p class="float-right"><span>Seguir</span> <img src="<?php echo get_theme_file_uri( 'assets/images/plus-icon.png' ); ?>" ></p>
                                 </a>
                             </li>
                             <li class="youtube float-left">
-                                <a class="text-white float-left" href="#" target="_blank" aria-label="Youtube">
+                                <a class="text-white float-left" href="https://www.youtube.com/user/mauriciofortunato" target="_blank" aria-label="Youtube">
                                     <i class="fa fa-youtube"></i>
                                     <p class="float-right"><span>Seguir</span> <img src="<?php echo get_theme_file_uri( 'assets/images/plus-icon.png' ); ?>" ></p>
                                 </a>
@@ -363,9 +363,9 @@ get_header(); ?>
                                     </div>
                                 </div>
                                 <div class="social">
-                                    <p><a href="#" class="facebook"><i class="fa fa-facebook-f"></i> <span>Facebook</span></a></p>
-                                    <p><a href="#" class="youtube"><i class="fa fa-youtube"></i> <span>Youtube</span></a></p>
-                                    <p><a href="#" class="google"><i class="fa fa-google-plus"></i> <span>Google+</span></a></p>
+                                    <p><a href="https://facebook.com/invsc" class="facebook" target="_blank"><i class="fa fa-facebook-f"></i> <span>Facebook</span></a></p>
+                                    <p><a href="https://www.youtube.com/user/mauriciofortunato" target="_blank" class="youtube"><i class="fa fa-youtube"></i> <span>Youtube</span></a></p>
+                                    <p><a href="#" target="_blank" class="google"><i class="fa fa-google"></i> <span>Google fotos</span></a></p>
                                 </div>
 
                             </div>

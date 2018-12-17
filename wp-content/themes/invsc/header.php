@@ -61,17 +61,17 @@
                     <div class="social float-right">
                         <ul class="list-unstyled list-inline">
                             <li>
-                                <a class="google text-muted" href="#" target="_blank" aria-label="Google Plus">
-                                    <i class="fa fa-google-plus"></i>
+                                <a class="google text-muted" href="#" target="_blank" aria-label="Google Fotos">
+                                    <i class="fa fa-google"></i>
                                 </a>
                             </li>
                             <li>
-                                <a class="youtube text-muted" href="#" target="_blank" aria-label="Youtube">
+                                <a class="youtube text-muted" href="https://www.youtube.com/user/mauriciofortunato" target="_blank" aria-label="Youtube">
                                     <i class="fa fa-youtube"></i>
                                 </a>
                             </li>
                             <li>
-                                <a class="facebook text-muted" href="#" target="_blank" aria-label="Facebook">
+                                <a class="facebook text-muted" href="https://facebook.com/invsc" target="_blank" aria-label="Facebook">
                                     <i class="fa fa-facebook-f"></i>
                                 </a>
                             </li>
@@ -152,9 +152,9 @@
                     <h4>Siga-nos</h4>
                     <ul class="list-unstyled">
                         <li><p>INVSC nas redes sociais!</p></li>
-                        <li><a href="#" class="text-muted google">Google+</a></li>
-                        <li><a href="#" class="text-muted facebook">Facebook</a></li>
-                        <li><a href="#" class="text-muted youtube">Youtube</a></li>
+                        <li><a href="#" class="text-muted google">Google fotos</a></li>
+                        <li><a href="https://facebook.com/invsc" target="_blank" class="text-muted facebook">Facebook</a></li>
+                        <li><a href="https://www.youtube.com/user/mauriciofortunato" target="_blank" class="text-muted youtube">Youtube</a></li>
                     </ul>
                 </div>
             </div>
