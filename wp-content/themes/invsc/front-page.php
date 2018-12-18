@@ -17,46 +17,72 @@ get_header(); ?>
     <main role="main">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <!--li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li-->
+            <?php
+                $args = [
+                    'post_type' => 'slides',
+                    'order' => 'desc'
+                ];
+                $querySlides = new WP_Query($args);
+                if ($querySlides->have_posts()) {
+                    $count = 0;
+                    $class = "active";
+                    foreach ($querySlides->posts as $post) {
+                        if ($count != 0) {
+                            $class = "";
+                        } ?>
+                        <li data-target="#myCarousel" data-slide-to="0" class="<?php echo $class; ?>"></li>
+                    <?php
+                        $count++;
+                    }
+                }
+            ?>
+
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="first-slide" height="1900" src="<?php echo get_theme_file_uri( 'assets/images/cross-background.png' ); ?>" alt="First slide">
-                <div class="container">
-                    <div class="carousel-caption text-left">
-                        <h1>Igreja de Nova Vida em São Cristóvão</h1>
-                        <p>
-                            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec<br>
-                            id elit non mi porta gravida at eget metus. Nullam id dolor id<br>
-                            nibh ultricies vehicula ut id elit.
-                        </p>
-                        <img class="logoSlide" src="<?php echo get_theme_file_uri( 'assets/images/logo-blue.png' ); ?>" alt="INVSC Logo">
-                        <p><a class="btn btn-lg btn-transparent" href="#" role="button">SAIBA MAIS</a></p>
+            <?php
+            $args = [
+                'post_type' => 'slides',
+                'order' => 'ASC'
+            ];
+            $querySlides = new WP_Query($args);
+            if ($querySlides->have_posts()) {
+                $count = 0;
+                $class = "active";
+                foreach ($querySlides->posts as $post) {
+                    if ($count != 0) {
+                        $class = "";
+                    }
+                    $slideLink = get_post_meta($post->ID, 'link');
+                    $slideVideo = get_post_meta($post->ID, 'video');
+
+            ?>
+                    <div class="carousel-item <?php echo $class ?>">
+
+                        <?php if(!empty($slideVideo[0])) { ?>
+                            <video width="100%" style="width: 100%" autoplay loop>
+                                    <source src="<?php echo $slideVideo[0]; ?>" type="video/webm">
+                                Your browser does not support the video tag.
+                            </video>
+                        <?php
+                            } else {
+                                echo get_the_post_thumbnail();
+                        } ?>
+
+                        <div class="container">
+                            <div class="carousel-caption text-left">
+
+                                <?php echo $post->post_content; ?>
+
+
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <!--div class="carousel-item">
-                <img class="first-slide" height="1900" src="<?php echo get_theme_file_uri( 'assets/images/slide2.jpg' ); ?>" alt="First slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Another example headline.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
-                <div class="container">
-                    <div class="carousel-caption text-right">
-                        <h1>One more for good measure.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-                    </div>
-                </div>
-            </div-->
+
+                <?php
+                    $count++;
+                }
+            }
+            ?>
         </div>
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -97,7 +123,7 @@ get_header(); ?>
                                         <div id="first-news-text" class="container">
                                             <h2><a href="#" class="color-primary"><?php echo $post->post_title; ?></a></h2>
                                             <p>
-                                                <a href="#"><?php echo $post->post_excerpt; ?></a>
+                                                <a href="<?php echo get_permalink(); ?>"><?php echo $post->post_excerpt; ?></a>
                                             </p>
 
                                         </div>

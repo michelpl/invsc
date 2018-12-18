@@ -12,32 +12,60 @@
 
 get_header(); ?>
 
-<div class="wrap">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+<main role="main">
+    <?php
+    if (have_posts()) :
+        while (have_posts()) :
+        the_post();
+    ?>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+            </ol>
+            <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <?php the_post_thumbnail(); ?>
 
-				get_template_part( 'template-parts/post/content', get_post_format() );
+                        <div class="container">
+                            <div class="carousel-caption text-left">
+                                <h1 class="color-primary"></h1>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
 
-				the_post_navigation( array(
-					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'invsc' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'invsc' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . invsc_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span>%title</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'invsc' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'invsc' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' . invsc_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span></span>',
-				) );
+    <!-- First box
+    ================================================== -->
 
-			endwhile; // End of the loop.
-			?>
+    <div id="first-box" class="container">
+        <div class="row">
+            <div id="news-box" class="col-lg-12 primary-shadow">
+                <div class="row">
+                    <div id="first-news" class="col-lg-9">
+                        <div id="first-news-text" class="container" style="height: auto;">
+                            <h2><a href="#" class="color-primary"><?php the_title(); ?></a></h2>
+                            <p>
+                                <a href="#"><?php the_content(); ?></a>
+                            </p>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+                        </div>
+                    </div>
+                    <div id="first-news" class="col-lg-3">
+                        <?php get_sidebar(); ?>
+                    </div>
+                </div>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
 
-<?php get_footer();
+    <?php
+            endwhile;
+        endif;
+    ?>
+    <?php  get_footer(); ?>
+
+</main>
+</body>
+</html>

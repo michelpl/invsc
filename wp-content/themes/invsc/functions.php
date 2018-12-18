@@ -823,8 +823,6 @@ add_action( 'save_post', 'wpt_save_events_time', 1, 2 );
 /**
  * Videos
  */
-
-
 function wpt_video_post_type() {
     $labels = array(
         'name'               => __( 'Vídeos' ),
@@ -917,3 +915,157 @@ function wpt_save_videos_link( $post_id, $post ) {
     endforeach;
 }
 add_action( 'save_post', 'wpt_save_videos_link', 1, 2 );
+
+/**
+ * Slides
+ */
+
+
+function wpt_slide_post_type() {
+    $labels = array(
+        'name'               => __( 'Slides' ),
+        'singular_name'      => __( 'Slide' ),
+        'add_new'            => __( 'Adicionar Novo Slide' ),
+        'add_new_item'       => __( 'Adicionar Novo Slide' ),
+        'edit_item'          => __( 'Editar Slide' ),
+        'new_item'           => __( 'Adicionar Novo Slide' ),
+        'view_item'          => __( 'Visualizar Slide' ),
+        'search_items'       => __( 'Procurar Slide' ),
+        'not_found'          => __( 'Nenhum slide encontrado' ),
+        'not_found_in_trash' => __( 'Nenhum slide na lixeira' )
+    );
+    $supports = array(
+        'title',
+        'editor',
+        'thumbnail',
+        'revisions',
+    );
+    $args = array(
+        'labels'               => $labels,
+        'supports'             => $supports,
+        'public'               => true,
+        'capability_type'      => 'post',
+        'rewrite'              => array( 'slug' => 'slides' ),
+        'has_archive'          => true,
+        'menu_position'        => 2,
+        'menu_icon'            => 'dashicons-images-alt2',
+        'register_meta_box_cb' => 'wpt_add_slide_metaboxes',
+    );
+    register_post_type( 'slides', $args );
+}
+add_action( 'init', 'wpt_slide_post_type' );
+
+
+function wpt_add_slide_metaboxes()
+{
+    add_meta_box(
+        'wpt_slide_link',
+        'Slide link',
+        'wpt_slide_link',
+        'slides',
+        'side',
+        'default'
+    );
+
+    add_meta_box(
+        'wpt_slide_video',
+        'Slide vídeo',
+        'wpt_slide_video',
+        'slides',
+        'side',
+        'default'
+    );
+}
+
+add_action( 'add_meta_boxes', 'add_slide_metaboxes' );
+
+function wpt_slide_link() {
+    global $post;
+    // Nonce field to validate form request came from current site
+    wp_nonce_field( basename( __FILE__ ), 'slide_fields' );
+    // Get the date data if it's already been entered
+    $link = get_post_meta( $post->ID, 'link', true );
+    // Output the field
+    echo '<input type="text" name="link" value="' . esc_textarea( $link )  . '" class="widefat">';
+}
+
+function wpt_save_slide_link( $post_id, $post ) {
+    // Return if the user doesn't have edit permissions.
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return $post_id;
+    }
+    // Verify this came from the our screen and with proper authorization,
+    // because save_post can be triggered at other times.
+    if ( ! isset( $_POST['link'] ) || ! wp_verify_nonce( $_POST['slide_fields'], basename(__FILE__) ) ) {
+        return $post_id;
+    }
+    // Now that we're authenticated, time to save the data.
+    // This sanitizes the data from the field and saves it into an array $events_meta.
+    $slide_meta['link'] = esc_textarea( $_POST['link'] );
+    // Cycle through the $events_meta array.
+    // Note, in this example we just have one item, but this is helpful if you have multiple.
+    foreach ( $slide_meta as $key => $value ) :
+        // Don't store custom data twice
+        if ( 'revision' === $post->post_type ) {
+            return;
+        }
+        if ( get_post_meta( $post_id, $key, false ) ) {
+            // If the custom field already has a value, update it.
+            update_post_meta( $post_id, $key, $value );
+        } else {
+            // If the custom field doesn't have a value, add it.
+            add_post_meta( $post_id, $key, $value);
+        }
+        if ( ! $value ) {
+            // Delete the meta key if there's no value
+            delete_post_meta( $post_id, $key );
+        }
+    endforeach;
+}
+add_action( 'save_post', 'wpt_save_slide_link', 1, 2 );
+
+
+function wpt_slide_video() {
+    global $post;
+    // Nonce field to validate form request came from current site
+    wp_nonce_field( basename( __FILE__ ), 'slide_fields' );
+    // Get the date data if it's already been entered
+    $video = get_post_meta( $post->ID, 'video', true );
+    // Output the field
+    echo '<input type="text" name="video" value="' . esc_textarea( $video )  . '" class="widefat">';
+}
+
+function wpt_save_slide_video( $post_id, $post ) {
+    // Return if the user doesn't have edit permissions.
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return $post_id;
+    }
+    // Verify this came from the our screen and with proper authorization,
+    // because save_post can be triggered at other times.
+    if ( ! isset( $_POST['video'] ) || ! wp_verify_nonce( $_POST['slide_fields'], basename(__FILE__) ) ) {
+        return $post_id;
+    }
+    // Now that we're authenticated, time to save the data.
+    // This sanitizes the data from the field and saves it into an array $events_meta.
+    $slide_meta['video'] = esc_textarea( $_POST['video'] );
+    // Cycle through the $events_meta array.
+    // Note, in this example we just have one item, but this is helpful if you have multiple.
+    foreach ( $slide_meta as $key => $value ) :
+        // Don't store custom data twice
+        if ( 'revision' === $post->post_type ) {
+            return;
+        }
+        if ( get_post_meta( $post_id, $key, false ) ) {
+            // If the custom field already has a value, update it.
+            update_post_meta( $post_id, $key, $value );
+        } else {
+            // If the custom field doesn't have a value, add it.
+            add_post_meta( $post_id, $key, $value);
+        }
+        if ( ! $value ) {
+            // Delete the meta key if there's no value
+            delete_post_meta( $post_id, $key );
+        }
+    endforeach;
+}
+add_action( 'save_post', 'wpt_save_slide_video', 1, 2 );

@@ -168,6 +168,23 @@ ul li {
     border-radius: 4px;
 }
 
+.search-submit {
+    width: 150px;
+    height: 50px;
+    background-color: #272B4F;
+    color: #fff!important;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 8px 10px;
+    font-weight: 400!important;
+}
+
+.search-submit svg {
+    width: 10px;
+    color: white!important;
+}
+
 .bg-dark {
     background-color: #0f1224 !important;
 }
@@ -860,7 +877,10 @@ footer a:hover{
     color: #c1c1c1!important;
 }
 
-.full-width {
-    /* width: 100%!important; */
-    /* max-width: 100%!important; */
+aside {
+    padding: 30px 5px;
+}
+
+aside .widget {
+    margin-bottom: 45px;
 }
