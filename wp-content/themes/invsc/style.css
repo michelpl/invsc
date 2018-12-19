@@ -140,6 +140,20 @@ ul {
 ul li {
 }
 
+.alignleft {
+    float:left;
+    margin: 5px 10px 0px 0;
+}
+
+.aligncenter{
+    display: block;
+    min-width: 50%;
+    margin: auto;
+}
+
+.size-thumbnail {
+}
+
 .text-gray {
     color: #666!important;
 }
@@ -351,7 +365,7 @@ ul li {
 
 #news-box>.row {
 }
-#first-news {
+#first-news, .gray-square {
     background-color: #F4F3F3;
     background-repeat: no-repeat;
     border: 3px solid #fff;
