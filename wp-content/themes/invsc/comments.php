@@ -1,82 +1,67 @@
 <?php
-/**
- * The template for displaying comments
- *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Invsc
- * @since 1.0
- * @version 1.0
- */
 
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
 if ( post_password_required() ) {
 	return;
 }
 ?>
+<div class="row" id="comment-box">
+    <div class="panel panel-default col-lg-12">
+        <div class="panel-heading"><h3>Comentários para este post <span class="comment-number">(1)</span></h3></div>
+        <div class="panel-body">
+            <?php
+            // You can start editing here -- including this comment!
+            if ( have_comments() ) : ?>
+                <h2 class="comments-title">
+                    <?php
+                    $comments_number = get_comments_number();
+                    if ( '1' === $comments_number ) {
+                        /* translators: %s: post title */
 
-<div id="comments" class="comments-area">
+                    } else {
 
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-			$comments_number = get_comments_number();
-			if ( '1' === $comments_number ) {
-				/* translators: %s: post title */
-				printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'invsc' ), get_the_title() );
-			} else {
-				printf(
-					/* translators: 1: number of comments, 2: post title */
-					_nx(
-						'%1$s Reply to &ldquo;%2$s&rdquo;',
-						'%1$s Replies to &ldquo;%2$s&rdquo;',
-						$comments_number,
-						'comments title',
-						'invsc'
-					),
-					number_format_i18n( $comments_number ),
-					get_the_title()
-				);
-			}
-			?>
-		</h2>
+                            number_format_i18n( $comments_number );
+                    }
+                    ?>
+                </h2>
 
-		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'avatar_size' => 100,
-					'style'       => 'ol',
-					'short_ping'  => true,
-					'reply_text'  => invsc_get_svg( array( 'icon' => 'mail-reply' ) ) . __( 'Reply', 'invsc' ),
-				) );
-			?>
-		</ol>
+                <ul class="comment-list">
+                    <?php foreach ($comments as $comment) { ?>
+                         <li>
+                            <div class="image-box">
+                                <img src="<?php echo get_avatar_url($comment->comment_author_email); ?>">
+                            </div>
+                            <div class="comment-header">
+                                <span class="author-name">
+                                    <?php echo $comment->comment_author; ?>
+                                </span>
+                                <span class="date">
+                                    <?php echo $comment->comment_date; ?>
+                                </span>
+                            </div>
+                            <div class="content">
+                                <?php echo $comment->comment_content; ?>
+                            </div>
+                         </li>
+                    <?php } ?>
+                </ul>
 
-		<?php the_comments_pagination( array(
-			'prev_text' => invsc_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous', 'invsc' ) . '</span>',
-			'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'invsc' ) . '</span>' . invsc_get_svg( array( 'icon' => 'arrow-right' ) ),
-		) );
+                <?php /*the_comments_pagination( array(
+                    'prev_text' => invsc_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous', 'invsc' ) . '</span>',
+                    'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'invsc' ) . '</span>' . invsc_get_svg( array( 'icon' => 'arrow-right' ) ),
+                ) );*/
 
-	endif; // Check for have_comments().
+            endif; // Check for have_comments().
 
-	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+            // If comments are closed and there are comments, let's leave a little note, shall we?
+            if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'invsc' ); ?></p>
-	<?php
-	endif;
+                <p class="no-comments"><?php _e( 'Comments are closed.', 'invsc' ); ?></p>
+            <?php
+            endif;
 
-	comment_form();
-	?>
+            comment_form();
+            ?>
+        </div>
 
-</div><!-- #comments -->
+    </div><!-- #comments -->
+</div>

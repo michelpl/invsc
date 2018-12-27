@@ -1,4 +1,4 @@
-wi {
+* {
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
 }
@@ -897,4 +897,38 @@ aside {
 
 aside .widget {
     margin-bottom: 45px;
+}
+
+#comment-box {margin: 0!important;padding: 0!important;}
+
+#comment-box .panel {margin: 0!important;padding: 0!important;}
+
+#comment-box .panel-heading {background-color: #40455C;color: #fff;padding: 39px 30px;}
+
+#comment-box .panel-heading h3{
+    font-size:24px;
+    margin: 0;
+    position: relative;
+}
+
+.comment-number {
+    font-size: 12px;
+    position: absolute;
+    top: -5px;
+    margin: 0 0 0 7px;
+    font-weight: bold;
+}
+
+.comment-list {
+
+}
+
+.comment-list li {
+    background-color: white;
+    margin: 3px;
+    padding: 5px 15px;
+}
+
+.comment-author img {
+    border-radius: 80px;
 }
