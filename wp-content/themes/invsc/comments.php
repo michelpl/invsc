@@ -5,7 +5,7 @@ if ( post_password_required() ) {
 }
 ?>
 <div class="row" id="comment-box">
-    <div class="panel panel-default col-lg-12">
+    <div class="panel panel-default col-12">
         <div class="panel-heading"><h3>Comentários para este post <span class="comment-number">(<?php echo get_comments_number(); ?>)</span></h3></div>
         <div class="panel-body">
             <?php
@@ -16,10 +16,10 @@ if ( post_password_required() ) {
                          <li>
                             <?php if($comment->comment_parent == 0) { ?>
                                 <div class="bg-white row padding-comment">
-                                    <div class="image-box col-lg-2">
-                                        <img src="<?php echo get_avatar_url($comment->user_id); ?>">
+                                    <div class="image-box col-4 col-md-2">
+                                        <img src="<?php echo get_avatar_url($comment->user_id); ?>" class="avatar-image">
                                     </div>
-                                    <div class="col-lg-10">
+                                    <div class="col-8 col-md-10">
                                         <div class="comment">
                                             <div class="author-name">
                                                 <?php echo get_the_author_meta('nickname', $comment->user_id);?>
@@ -37,13 +37,13 @@ if ( post_password_required() ) {
                                 </div>
                             <?php } else { ?>
                                 <div class="row">
-                                    <div class="col-lg-1 padding-comment" style="">
-                                        <img class="float-right" src="<?php echo get_theme_file_uri( 'assets/images/reply-arrow.png' ); ?>" width="18px">
+                                    <div class="col-1 padding-comment" style="">
+                                        <img class="float-right reply-arrow" src="<?php echo get_theme_file_uri( 'assets/images/reply-arrow.png' ); ?>" width="18px">
                                     </div>
-                                    <div class="image-box col-lg-2 bg-white padding-comment">
-                                        <img src="<?php echo get_avatar_url($comment->user_id); ?>">
+                                    <div class="image-box col-3 col-md-1 bg-white padding-comment">
+                                        <img src="<?php echo get_avatar_url($comment->user_id); ?>" class="avatar-image">
                                     </div>
-                                    <div class="col-lg-9 bg-white padding-comment">
+                                    <div class="col-8 col-md-10 bg-white padding-comment">
                                         <div class="comment">
                                             <div class="author-name">
                                                 <?php echo get_the_author_meta('nickname', $comment->user_id);?>
@@ -78,7 +78,7 @@ if ( post_password_required() ) {
             <?php
             endif;
 
-            comment_form();
+            //comment_form();
             ?>
         </div>
 

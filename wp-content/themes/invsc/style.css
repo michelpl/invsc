@@ -63,6 +63,11 @@
         padding: 3px 0 3px 0px!important;
     }
 
+    .avatar-image {
+        max-width: 100px!important;
+
+    }
+
 }
 @media (min-width: 860px){
     #schedule-tab .title{
@@ -74,7 +79,9 @@
         font-size: 3rem!important;
     }
 
-
+    .avatar-image {
+        width: 50% !important;
+    }
 }
 
 @media (min-width: 992px){
@@ -147,8 +154,9 @@ ul {
 
 .aligncenter{
     display: block;
-    min-width: 50%;
     margin: auto;
+    width: 100%;
+    height: auto;
 }
 
 .size-thumbnail {
@@ -945,5 +953,13 @@ aside .widget {
 }
 
 .padding-comment {
-    padding: 40px 25px;
+    padding: 40px 0;
+}
+.avatar-image {
+    width: 75%;
+    padding: 0;
+}
+
+.reply-arrow {
+    margin-right: 4px;
 }
