@@ -161,8 +161,8 @@ get_header(); ?>
 
                                             <li class="col-lg-6">
                                                 <div class="container">
-                                                    <h3><a href="#" class=""><?php echo $post->post_title; ?></a></h3>
-                                                    <p><a href="#"><?php echo $post->post_excerpt ?> </a></p>
+                                                    <h3><a href="<?php echo get_permalink(); ?>" class=""><?php echo $post->post_title; ?></a></h3>
+                                                    <p><a href="<?php echo get_permalink(); ?>"><?php echo $post->post_excerpt ?> </a></p>
                                                 </div>
                                             </li>
                                             <?php

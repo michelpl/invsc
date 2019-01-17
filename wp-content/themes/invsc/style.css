@@ -963,3 +963,24 @@ aside .widget {
 .reply-arrow {
     margin-right: 4px;
 }
+
+#respond {
+    margin: 0 15px;
+}
+
+#respond h3{
+
+}
+
+#respond p {
+    display:block;
+}
+
+#respond textarea {
+    display:block;
+}
+
+
+#respond input {
+    display:block;
+}
