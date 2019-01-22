@@ -91,12 +91,12 @@ $comments = get_comments($args);
         <ul class="comment-list">
             <li>
                 <div class="bg-white row padding-comment">
-                    <div class="">
+                    <div class="col-md-8 col-sm-12">
                         <?php
 
                         $fields = [
                             'author' =>
-                                "<div class='form-group'>
+                                "<div class='form-group '>
                                     <label for='author'>Nome</label>
                                     <input type='author' class='form-control' id='author' name='author' placeholder='Nome'>
                                     <div class='invalid-feedback'>
@@ -118,7 +118,7 @@ $comments = get_comments($args);
                             'id_form'           => 'commentform',
                             'class_form'      => 'needs-validation',
                             'id_submit'         => 'submit',
-                            'class_submit'      => 'submit',
+                            'class_submit'      => 'btn btn-primary',
                             'name_submit'       => 'submit',
                             'title_reply'       => __( 'Leave a Reply' ),
                             'title_reply_to'    => __( 'Leave a Reply to %s' ),
@@ -128,9 +128,9 @@ $comments = get_comments($args);
 
                             'comment_field' =>  "<div class='form-group'>
                                     <label for='exampleFormControlInput1'>Seu comentário</label>
-                                    <textarea class='form-control' rows='5' id='comment' name='comment'></textarea>
+                                    <textarea class='form-control' rows='5' cols='8' id='comment' name='comment'></textarea>
                                     <div class='invalid-feedback'>
-                                        Preencha seu comentário
+                                        Adicione um comentário
                                     </div>
                                 </div>",
 
@@ -175,9 +175,9 @@ $comments = get_comments($args);
                 $('form').children().children('.form-control').each(function () {
 
                     if ($(this).attr('name') == 'email') {
-                        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                        var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-                        if(!re.test(String($(this).val()).toLowerCase())){
+                        if(!regex.test(String($(this).val()).toLowerCase())){
                             $(this).next('.invalid-feedback').show();
                             error = true;
                         }else{
