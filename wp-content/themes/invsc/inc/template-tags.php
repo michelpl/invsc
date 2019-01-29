@@ -42,13 +42,13 @@ function invsc_time_link() {
 		get_the_date( DATE_W3C ),
 		get_the_date(),
 		get_the_modified_date( DATE_W3C ),
-		get_the_modified_date()
+		' e atualizado em ' . get_the_modified_date()
 	);
 
 	// Wrap the time string in a link, and preface it with 'Posted on'.
 	return sprintf(
 		/* translators: %s: post date */
-		__( '<span class="screen-reader-text">Posted on</span> %s', 'invsc' ),
+		__( '<span class="screen-reader-text">Postado em</span> %s', 'invsc' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 }

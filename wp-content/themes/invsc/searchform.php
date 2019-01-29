@@ -35,7 +35,8 @@
         </div>
 
         <div class="col-auto my-1">
-            <button type="submit" class="btn btn-primary">Buscar</button>
+            <button type="submit" class="btn btn-primary search-submit">Buscar</button>
         </div>
     </div>
+
 </form>

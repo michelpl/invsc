@@ -167,8 +167,7 @@ $comments = get_comments($args);
     <script>
 
         $(document).ready(function () {
-            $('form').submit(function (e) {
-                console.log($(this).children().html());
+            $('.needs-validation').submit(function (e) {
 
                 var error = false;
 

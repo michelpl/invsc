@@ -1,62 +1,67 @@
 <?php
-/**
- * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package WordPress
- * @subpackage Invsc
- * @since 1.0
- * @version 1.0
- */
+    get_header();
+    $height = "style='height:250px'";
+    $bg = "style='background-color:#3d3f56'";
+    ?>
 
-get_header(); ?>
+    <main role="main">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" <?php echo $height; ?>>
+            <ol class="carousel-indicators">
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active" <?php echo $bg; ?>>
+                    <div class="container">
+                        <div class="carousel-caption text-left">
+                            <h1 class="color-primary"></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="first-box" class="container">
+            <div class="row">
+                <div id="news-box" class="col-lg-12 primary-shadow">
+                    <div class="row">
+                        <div class="col-lg-9 gray-square">
+                            <div id="first-news-text" class="container search-results" style="height: auto;">
+                                <?php if ( have_posts() ) : ?>
+                                    <h1 class="page-title"><?php echo 'Resultados encontrados para: <span>' . get_search_query() . '</span>'; ?></h1>
+                                <?php else : ?>
+                                    <h1 class="page-title">Nenhum resultado encontrado</h1>
+                                <?php endif; ?>
 
-<div class="wrap">
+                                <?php
+                                if ( have_posts() ) :
+                                    /* Start the Loop */
+                                    while ( have_posts() ) : the_post();
 
-	<header class="page-header">
-		<?php if ( have_posts() ) : ?>
-			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'invsc' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-		<?php else : ?>
-			<h1 class="page-title"><?php _e( 'Nothing Found', 'invsc' ); ?></h1>
-		<?php endif; ?>
-	</header><!-- .page-header -->
+                                        /**
+                                         * Run the loop for the search to output the results.
+                                         * If you want to overload this in a child theme then include a file
+                                         * called content-search.php and that will be used instead.
+                                         */
+                                        get_template_part( 'template-parts/post/content', 'excerpt' );
+                                        echo '<hr>';
+                                    endwhile; // End of the loop.
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) :
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+                                else : ?>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/post/content', 'excerpt' );
+                                    <p>Nenhum resultado encontrado para sua busca</p>
+                                    <?php
+                                    get_search_form();
 
-			endwhile; // End of the loop.
-
-			the_posts_pagination( array(
-				'prev_text' => invsc_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'invsc' ) . '</span>',
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'invsc' ) . '</span>' . invsc_get_svg( array( 'icon' => 'arrow-right' ) ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'invsc' ) . ' </span>',
-			) );
-
-		else : ?>
-
-			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'invsc' ); ?></p>
-			<?php
-				get_search_form();
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+                                endif;
+                                ?>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 gray-square">
+                            <?php get_sidebar(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
 <?php get_footer();

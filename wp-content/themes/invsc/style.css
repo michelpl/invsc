@@ -984,3 +984,42 @@ aside .widget {
 #respond input {
     display:block;
 }
+
+.search-results {
+
+}
+
+.search-results h1 {
+    font-size: 36px!important;
+    margin-bottom: 25px;
+}
+
+.search-results h2 {
+
+}
+
+.search-results h3 {
+
+}
+
+.search-results p {
+    margin: 15px 0 25px 0;
+}
+
+.search-results a {
+    color: #212529;
+    font-size: 26px;
+}
+
+.search-results hr {
+    margin-bottom: 55px;
+}
+
+.search-results .entry-meta, .search-results time{
+    font-size:14px;
+}
+
+.search-results .more-link {
+    font-size: 16px;
+    color: #BEBEBE!important;
+}

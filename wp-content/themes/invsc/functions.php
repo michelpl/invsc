@@ -443,7 +443,7 @@ function invsc_excerpt_more( $link ) {
 	$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Name of current post */
-		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'invsc' ), get_the_title( get_the_ID() ) )
+		sprintf( __( 'Continuar lendo<span class="screen-reader-text"> "%s"</span>', 'invsc' ), get_the_title( get_the_ID() ) )
 	);
 	return ' &hellip; ' . $link;
 }
