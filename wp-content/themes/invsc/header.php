@@ -43,7 +43,7 @@
             <div class="row main-menu" style="margin: 0">
                 <div class="col-lg-12">
                     <div class="logo float-left">
-                        <img width="130" src="<?php echo get_theme_file_uri( 'assets/images/logo-white.png' ); ?>" alt="Logo Igreja de Nova Vida São Cristóvão">
+                        <a href="<?php echo get_home_url(); ?>"><img width="130" src="<?php echo get_theme_file_uri( 'assets/images/logo-white.png' ); ?>" alt="Logo Igreja de Nova Vida São Cristóvão"></a>
                     </div>
                     <div class="menu float-left">
                         <button class="menu-icon float-left show-hide" type="button" data="hide-menu">

@@ -35,7 +35,7 @@ if ( ! function_exists( 'invsc_time_link' ) ) :
 function invsc_time_link() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="entry-date published" datetime="%1$s">Postado em %2$s</time><time class="updated" datetime="%3$s">%4$s </time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -113,10 +113,10 @@ function invsc_edit_link() {
 	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
-			__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'invsc' ),
+			__( 'Editar post<span class="screen-reader-text"> "%s"</span>', 'invsc' ),
 			get_the_title()
 		),
-		'<span class="edit-link">',
+		'<span class="edit-link"> | ',
 		'</span>'
 	);
 }

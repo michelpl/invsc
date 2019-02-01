@@ -392,8 +392,7 @@ ul {
 }
 
 #first-news-text a{
-    color:#000;
-
+    color: #22275a;
 }
 
 #first-news .read-more {
@@ -1015,11 +1014,25 @@ aside .widget {
     margin-bottom: 55px;
 }
 
-.search-results .entry-meta, .search-results time{
-    font-size:14px;
+.search-results .entry-meta, .search-results time, .post-edit-link{
+    font-size: 14px!important;
 }
 
 .search-results .more-link {
     font-size: 16px;
     color: #BEBEBE!important;
+}
+
+.search-results .screen-reader-text {
+    display:none;
+}
+
+.search-results .page-numbers {
+    font-size: 16px;
+    margin-right: 15px;
+    text-decoration: underline;
+}
+
+.search-results .nav-links {
+    margin: 15px 0;
 }
