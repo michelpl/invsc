@@ -43,7 +43,7 @@
 
     .footer .box {
         width: 21%;
-        height:400px;
+        height: 362px;
     }
 
     h2 {
@@ -104,6 +104,13 @@
     #all-news p a {
         font-size: 26px!important;
         margin: 50px 0 0 40px!important;
+    }
+}
+
+@media (min-width: 1400px){
+    .footer .box {
+        width: 21%;
+        height: 315px;
     }
 }
 
@@ -309,14 +316,13 @@ ul {
 
 .footer .box, .sub-menu .box p{
     color: #aaa;
-    margin-top: 1rem;
+    margin-top: 0.8rem;
 }
 
 .footer .box, .sub-menu .box {
     min-width: 235px;
     max-width: 100%;
-    padding: 0 30px;
-    margin-bottom: 100px;
+    padding: 0 15px;
 }
 
 .sub-menu hr {

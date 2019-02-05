@@ -10,7 +10,7 @@
                     </div><!-- .widget-area -->
                 <?php endif; ?>
             </div>
-            <div id="about" class="float-left box">
+            <div class="float-left box">
                 <?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
                     <div class="widget-area">
                         <?php dynamic_sidebar( 'sidebar-3' ); ?>
@@ -24,41 +24,39 @@
                         <?php dynamic_sidebar( 'sidebar-4' ); ?>
                     </div><!-- .widget-area -->
                 <?php endif; ?>
-
-            </div>
-            <div class="float-left" style="width: 100%;">
-
-                <div class="float-left box full-width">
-                    <?php if ( is_active_sidebar( 'sidebar-5' ) ) : ?>
-                        <div class="widget-area">
-                            <?php dynamic_sidebar( 'sidebar-5' ); ?>
-                        </div><!-- .widget-area -->
-                    <?php endif; ?>
-                </div>
-                <div class="float-left box full-width">
-                    <?php if ( is_active_sidebar( 'sidebar-6' ) ) : ?>
-                        <div class="widget-area">
-                            <?php dynamic_sidebar( 'sidebar-6' ); ?>
-                        </div><!-- .widget-area -->
-                    <?php endif; ?>
-                </div>
-                <div class="float-left box full-width">
-                    <?php if ( is_active_sidebar( 'sidebar-7' ) ) : ?>
-                        <div class="widget-area">
-                            <?php dynamic_sidebar( 'sidebar-7' ); ?>
-                        </div><!-- .widget-area -->
-                    <?php endif; ?>
-
-                </div>
-                <div class="float-left box full-width">
-                    <?php if ( is_active_sidebar( 'sidebar-8' ) ) : ?>
-                        <div class="widget-area">
-                            <?php dynamic_sidebar( 'sidebar-8' ); ?>
-                        </div><!-- .widget-area -->
-                    <?php endif; ?>
-                </div>
             </div>
 
+            <div class="float-left box">
+                <?php if ( is_active_sidebar( 'sidebar-5' ) ) : ?>
+                    <div class="widget-area">
+                        <?php dynamic_sidebar( 'sidebar-5' ); ?>
+                    </div><!-- .widget-area -->
+                <?php endif; ?>
+            </div>
+
+            <div class="float-left box">
+                <?php if ( is_active_sidebar( 'sidebar-6' ) ) : ?>
+                    <div class="widget-area">
+                        <?php dynamic_sidebar( 'sidebar-6' ); ?>
+                    </div><!-- .widget-area -->
+                <?php endif; ?>
+            </div>
+
+            <div class="float-left box">
+                <?php if ( is_active_sidebar( 'sidebar-7' ) ) : ?>
+                    <div class="widget-area">
+                        <?php dynamic_sidebar( 'sidebar-7' ); ?>
+                    </div><!-- .widget-area -->
+                <?php endif; ?>
+            </div>
+
+            <div class="float-left box">
+                <?php if ( is_active_sidebar( 'sidebar-8' ) ) : ?>
+                    <div class="widget-area">
+                        <?php dynamic_sidebar( 'sidebar-8' ); ?>
+                    </div><!-- .widget-area -->
+                <?php endif; ?>
+            </div>
 
         </div>
     </div>

@@ -173,7 +173,7 @@ get_header(); ?>
                             ?>
                             <li class="col-lg-6">
                                 <div id="all-news">
-                                    <p><a href="#">VER MAIS NOTÍCIAS
+                                    <p><a href="<?php echo get_category_link(4); ?>">VER MAIS NOTÍCIAS
                                             <i class="fa fa-angle-right"></i></a>
                                     </p>
                                 </div>
