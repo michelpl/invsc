@@ -61,11 +61,6 @@
                     <div class="social float-right">
                         <ul class="list-unstyled list-inline">
                             <li>
-                                <a class="google text-muted" href="#" target="_blank" aria-label="Google Fotos">
-                                    <i class="fa fa-google"></i>
-                                </a>
-                            </li>
-                            <li>
                                 <a class="youtube text-muted" href="https://www.youtube.com/user/mauriciofortunato" target="_blank" aria-label="Youtube">
                                     <i class="fa fa-youtube"></i>
                                 </a>
@@ -130,7 +125,7 @@
                 </div>
                 <div class="float-left box">
                     <?php
-                    $menu = wp_get_nav_menu_object("sub-menu-4" );
+                    /*$menu = wp_get_nav_menu_object("sub-menu-4" );
                     if ($menu->count > 0) {
 
                         echo "<h4>" . $menu->name . "</h4>";
@@ -140,7 +135,8 @@
                             'theme_location' => 'sub-menu-4',
                             'menu_class'     => 'list-unstyled sub-menu-ul',
                         ]);
-                    }
+                    }*/
+                    get_search_form();
                     ?>
                 </div>
                 <div class="close float-right">
@@ -152,7 +148,6 @@
                     <h4>Siga-nos</h4>
                     <ul class="list-unstyled">
                         <li><p>INVSC nas redes sociais!</p></li>
-                        <li><a href="#" class="text-muted google">Google fotos</a></li>
                         <li><a href="https://facebook.com/invsc" target="_blank" class="text-muted facebook">Facebook</a></li>
                         <li><a href="https://www.youtube.com/user/mauriciofortunato" target="_blank" class="text-muted youtube">Youtube</a></li>
                     </ul>

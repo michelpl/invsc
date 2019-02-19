@@ -35,13 +35,14 @@
 
     <div id="first-box" class="container">
         <div class="row">
+            <div class="col-lg-12 blue-border"></div>
             <div id="news-box" class="col-lg-12 primary-shadow">
                 <div class="row">
                     <div class="col-lg-9 gray-square">
-                        <div id="first-news-text" class="container" style="height: auto;">
-                            <h2><a href="#" class="color-primary"><?php the_title(); ?></a></h2>
+                        <div id="post-text" class="container" style="height: auto;">
+                            <h2><?php the_title(); ?></h2>
                             <p>
-                                <a href="#"><?php the_content(); ?></a>
+                                <?php the_content(); ?>
                             </p>
 
                         </div>

@@ -1,34 +1,49 @@
 <?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package WordPress
- * @subpackage Invsc
- * @since 1.0
- * @version 1.0
- */
+get_header();
+$height = '';
+$bg = '';
+if(!has_post_thumbnail()){
+    $height = "style='height:250px'";
+    $bg = "style='background-color:#3d3f56'";
+}
+?>
 
-get_header(); ?>
+    <main role="main">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" <?php echo $height; ?>>
+            <ol class="carousel-indicators">
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active" <?php echo $bg; ?>>
+                    <?php the_post_thumbnail(); ?>
 
-<div class="wrap">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'invsc' ); ?></h1>
-				</header><!-- .page-header -->
-				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'invsc' ); ?></p>
-
-					<?php get_search_form(); ?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-		</main><!-- #main -->
-	</div><!-- #primary -->
-</div><!-- .wrap -->
+                    <div class="container">
+                        <div class="carousel-caption text-left">
+                            <h1 class="color-primary"></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="first-box" class="container">
+            <div class="row">
+                <div class="col-lg-12 blue-border"></div>
+                <div id="news-box" class="col-lg-12 primary-shadow">
+                    <div class="row">
+                        <div class="col-lg-9 gray-square">
+                            <div id="" class="container search-results" style="height: auto;">
+                                <p style="font-size: 58px">404</p>
+                                <h1>Página não encontrada</h1>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 gray-square">
+                            <?php get_sidebar(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
 <?php get_footer();
+
+

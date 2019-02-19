@@ -2,6 +2,9 @@
 
 	<header class="entry-header">
 		<?php if ( 'post' === get_post_type() ) : ?>
+
+
+
 			<div class="entry-meta">
 				<?php
 				echo invsc_time_link();
@@ -24,7 +27,16 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
-		<?php the_excerpt(); ?>
+        <?php
+            if (get_post_type() === 'events') {
+                $eventDate = get_post_meta( $post->ID, 'date');
+                echo '<p>Em: ' . date("d/m/Y", strtotime($eventDate[0])) . '</p>';
+            }
+        ?>
+        <div class="content-page-post-thumbnail">
+            <a href="<?php echo get_permalink(); ?>"><?php echo get_the_post_thumbnail(); ?></a>
+        </div>
+        <a href="<?php echo get_permalink(); ?>" class="except-text"><?php the_excerpt(); ?></a>
 	</div><!-- .entry-summary -->
 
 </article><!-- #post-## -->

@@ -20,10 +20,11 @@ $bg = "style='background-color:#3d3f56'";
         </div>
         <div id="first-box" class="container">
             <div class="row">
+                <div class="col-lg-12 blue-border"></div>
                 <div id="news-box" class="col-lg-12 primary-shadow">
                     <div class="row">
                         <div class="col-lg-9 gray-square">
-                            <div id="first-news-text" class="container search-results" style="height: auto;">
+                            <div id="post-text" class="container search-results" style="height: auto;">
                                 <?php if ( have_posts() ) : ?>
                                     <h1 class="page-title">Categoria: <?php single_cat_title(); ?></h1>
                                 <?php else : ?>
@@ -32,11 +33,12 @@ $bg = "style='background-color:#3d3f56'";
 
                                 <?php
                                 // the query to set the posts per page to 3
+                                $slug = get_the_category()[0]->slug;
                                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                                 $args =
                                     [
                                         'posts_per_page' => 10,
-                                        'category_name'  => 'news',
+                                        'category_name'  => $slug,
                                         'paged' => $paged
                                     ];
                                 query_posts($args); ?>

@@ -72,7 +72,7 @@
 @media (min-width: 860px){
     #schedule-tab .title{
         width:25%!important;
-        height: 520px;
+        height: 709px;
     }
 
     h1 {
@@ -398,7 +398,7 @@ ul {
 }
 
 #first-news-text a{
-    color: #22275a;
+    color: #f5f5f5;
 }
 
 #first-news .read-more {
@@ -425,7 +425,7 @@ ul {
 #other-news ul li .container {
     margin: 0;
     padding: 0;
-    background-color: #E4E4E4;
+    background-color: #383b52;
     height: 180px;
 }
 
@@ -436,11 +436,11 @@ ul {
 
 #other-news ul li .container p a{
     padding: 0px 15px;
-    color:#000;
+    color: #fff;
     float:left;
 }
 
-#all-news {background-color: #ea5f60;height: 180px;}
+#all-news {background-color: #192a55;height: 180px;}
 
 #all-news p {
     margin: 0;
@@ -521,7 +521,7 @@ ul {
 }
 
 #other-news ul li .container h3 a{
-    background-color: #545773;
+    background-color: #313457;
     color: #fff;
     font-weight: bold!important;
     text-transform: uppercase;
@@ -533,7 +533,7 @@ ul {
 }
 
 #event-box {
-    padding: 3px 0 3px 0px;
+    padding: 0px 0 0px 0px;
     background-color: #fff;
 }
 
@@ -549,12 +549,11 @@ ul {
 
 }
 
-#event-box .tabs li {
-
-}
+#event-box .tabs li {margin-bottom: 3px;margin-top: 0px;}
 
 #event-box .tabs li {
     background-color: #F4F3F3;
+    height: 175px;
 }
 
 #event-box .tabs li button {
@@ -563,9 +562,8 @@ ul {
     border: 0;
     width:  100%;
     text-transform: uppercase;
-    min-height: 168px;
+    min-height: 175px;
     padding: 0 10px;
-
 }
 
 #event-box .tabs li button a{
@@ -612,6 +610,9 @@ ul {
     margin: 0;
     padding: 0 0px;
 }
+.full-tab, .last-post {
+    margin-bottom: 0!important;
+}
 
 #full-tab-button {
 }
@@ -643,15 +644,15 @@ li.active {
 .tab-content .tab-item ul li div {
     background-color: #F4F3F3;
     border-right: 3px solid #fff;
-    padding: 44px 15px;
+    padding: 68px 15px 2px 15px;
     text-align:  center;
     font-size: 26px;
-    min-height: 80px;
+    min-height: 175px;
     margin-right: 0;
 }
 
 .tab-content .tab-item ul li div a{
-    color: #592224;
+    color: #192a55;
     font-weight: lighter;
 }
 
@@ -677,7 +678,7 @@ li.active {
     width: 100%;
     text-align:  center;
     border: 1px solid #fff;
-    color: #592224;
+    color: #192a55;
     background-color: #F4F3F3;
     overflow: auto;
 }
@@ -686,7 +687,7 @@ li.active {
     font-size: 20px;
     background-color: #ccc;
     padding:20px 50px;
-    margin: 0 0 20px;
+    margin: 0 0 35px;
 }
 
 #schedule-tab .title p{
@@ -730,15 +731,19 @@ li.active {
     float: left;
 }
 
-#video-box .text h2 {font-size: 24px;}
+#video-box .text h2 {font-size: 24px;width: 90%!important;}
+
+#video-box .text a {
+    color: #0f1124;
+}
 
 #video-box .text p {
 
 }
 
-#video-box .text .date {
+#video-box .text .date{
     font-size: 33px;
-    color: #fafafa;
+    color: #f7f1f1;
     text-align: right;
     position: absolute;
     right: 0;
@@ -770,7 +775,8 @@ li.active {
 
 #fourth-box {
     padding: 71px 0 120px 0;
-    background-repeat:  no-repeat;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
 }
 
 #address-box {
@@ -1011,7 +1017,7 @@ aside .widget {
     margin: 15px 0 25px 0;
 }
 
-.search-results a {
+.search-results .entry-title a {
     color: #212529;
     font-size: 26px;
 }
@@ -1026,7 +1032,15 @@ aside .widget {
 
 .search-results .more-link {
     font-size: 16px;
-    color: #BEBEBE!important;
+    color: #6f6f6f!important;
+    border: 1px solid #6f6f6f;
+    border-radius: 4px;
+    padding: 13px;
+}
+
+.search-results .more-link:hover {
+    border-color:#bebebe!important;
+    color:#bebebe!important;
 }
 
 .search-results .screen-reader-text {
@@ -1041,4 +1055,39 @@ aside .widget {
 
 .search-results .nav-links {
     margin: 15px 0;
+}
+
+.content-page-post-thumbnail img {
+    width: 100%;
+    height:auto;
+}
+
+.content-page-post-thumbnail {
+    overflow: hidden;
+    max-height:400px;
+    width:100%;
+}
+
+.except-text {
+    color: #4a4a4a!important;
+}
+
+.thumb-cover {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#post-text a, .widget a {
+    color: #0f1124;
+}
+
+#post-text h1, #post-text h2 {
+    margin-top: 25px;
+}
+
+.blue-border {
+    background-color: #0f1124;
+    margin-top: -102px;
+    height: 15px;
 }

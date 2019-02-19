@@ -119,9 +119,10 @@ get_header(); ?>
                                     }
                                     ?>
 
-                                    <div id="first-news" class="col-lg-6" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/news-flag.png'); ?>'">
+                                    <div id="first-news" class="col-lg-6 thumb-cover" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
+                                        <!--img src="<?php echo get_theme_file_uri( 'assets/images/news-flag.png'); ?>" style="position: absolute"/-->
                                         <div id="first-news-text" class="container">
-                                            <h2><a href="#" class="color-primary"><?php echo $post->post_title; ?></a></h2>
+                                            <h2><a href="<?php echo get_permalink(); ?>" class="color-primary"><?php echo $post->post_title; ?></a></h2>
                                             <p>
                                                 <a href="<?php echo get_permalink(); ?>"><?php echo $post->post_excerpt; ?></a>
                                             </p>
@@ -129,7 +130,7 @@ get_header(); ?>
                                         </div>
                                         <div class="container">
                                             <div class="addthis_inline_share_toolbox float-left"></div>
-                                            <a class="read-more color-primary float-right" href="#">Ler post completo <i class="fa fa-angle-right"></i></a>
+                                            <a class="read-more color-primary float-right" href="<?php echo get_permalink(); ?>">Ler post completo <i class="fa fa-angle-right"></i></a>
                                         </div>
                                     </div>
 
@@ -137,7 +138,6 @@ get_header(); ?>
                                     break;
                                 }
                             }
-                            wp_reset_postdata();
                         }
                     ?>
 
@@ -152,17 +152,15 @@ get_header(); ?>
                                             $post->post_excerpt = $content[0];
                                         }
 
-                                        if (strlen($post->post_excerpt) < 3) {
-                                            $post->post_excerpt = $post->post_content;
-                                        }
 
                                         if ($index > 0) {
                                             ?>
 
                                             <li class="col-lg-6">
-                                                <div class="container">
+                                                <div class="container thumb-cover" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
+
                                                     <h3><a href="<?php echo get_permalink(); ?>" class=""><?php echo $post->post_title; ?></a></h3>
-                                                    <p><a href="<?php echo get_permalink(); ?>"><?php echo $post->post_excerpt ?> </a></p>
+                                                    <p><a href="<?php echo get_permalink(); ?>"><?php echo strip_tags($post->post_excerpt); ?> </a></p>
                                                 </div>
                                             </li>
                                             <?php
@@ -226,9 +224,17 @@ get_header(); ?>
                                         </a>
                                     </button>
                                 </li>
-                                <li role="full-tab">
+                                <li role="boletim-tab">
+                                    <button>
+                                        <a href="#boletim">
+                                            <i class="big-icon fa fa-phone"></i>
+                                            <p><span>Boletim mensal</span> <i class="arrow fa fa-angle-right"></i></p>
+                                        </a>
+                                    </button>
+                                </li>
+                                <li class="full-tab" role="full-tab">
                                     <button id="full-tab-button" class="primary">
-                                        <a href="#" class="primary">
+                                        <a href="events" class="primary">
                                             <i class="big-icon fa fa-clock"></i>
                                             <p><span class="primary">Ver Programação completa</span> <i class="arrow fa fa-angle-right"></i></p>
                                         </a>
@@ -249,20 +255,25 @@ get_header(); ?>
                                     ];
                                     $queryEvents = new WP_Query($args);
                                     if ($queryEvents->have_posts()) {
-
+                                        $i = 1;
                                         foreach ($queryEvents->posts as $post) {
                                             $eventDate = get_post_meta( $post->ID, 'date');
                                             $eventMonth = date("m", strtotime($eventDate[0]));
                                             $eventDay = date("d", strtotime($eventDate[0]));
                                             $ptMonth = $month[$eventMonth];
+                                            $last = '';
 
-                                            ;
+                                            if ($i == ($queryEvents->post_count)) {
+                                                $last = 'last-post';
+                                            }
+                                            $i++;
+
                                     ?>
-                                            <li>
-                                                <div class="float-left date"><a href="#"><?php echo $eventDay . ' ' . $month_abbrev[$ptMonth]; ?></a></div>
+                                            <li class="<?php echo $last;?>">
+                                                <div class="float-left date"><a href="<?php echo get_permalink(); ?>"><?php echo $eventDay . ' ' . $month_abbrev[$ptMonth]; ?></a></div>
                                                 <div class="float-left title" style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/corner-white.png' ); ?>');">
-                                                    <a href="#" class="float-left"><?php echo $post->post_title; ?></a>
-                                                    <a class="btn btn-primary float-right" type="button">Saiba mais</a>
+                                                    <a href="<?php echo get_permalink(); ?>" class="float-left"><?php echo $post->post_title; ?></a>
+                                                    <a class="btn btn-primary float-right" href="<?php echo get_permalink(); ?>" type="button">Saiba mais</a>
                                                 </div>
                                             </li>
                                     <?php
@@ -287,6 +298,10 @@ get_header(); ?>
                                 }
                                 wp_reset_postdata();
                                 ?>
+                            </div>
+
+                            <div class="tab-item" id="boletim-tab">
+                                <ul>Boletim de fevereiro</ul>
                             </div>
                         </div>
                     </div>
@@ -321,9 +336,9 @@ get_header(); ?>
                                                 <iframe width="100%" height="350" src="https://www.youtube.com/embed/<?php echo $videoId; ?>?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                             </div>
                                             <div class="col-lg-4 text">
-                                                <h2><?php echo $post->post_title; ?></h2>
-                                                <p><?php echo $post->post_content; ?></p>
-                                                <p class="date"><?php echo date("d/m", strtotime($post->post_date)); ?></p>
+                                                <h2><a href="https://www.youtube.com/embed/<?php echo $videoId; ?>" target="_blank"><?php echo $post->post_title; ?></a></h2>
+                                                <p><a href="https://www.youtube.com/embed/<?php echo $videoId; ?>" target="_blank"><?php echo $post->post_content; ?></a></p>
+                                                <a href="https://www.youtube.com/embed/<?php echo $videoId; ?>" target="_blank"><p class="date"><?php echo date("d/m", strtotime($post->post_date)); ?></p></a>
                                             </div>
                             <?php
                                         }
@@ -346,7 +361,7 @@ get_header(); ?>
         <!-- Address box
     ================================================== -->
 
-        <div id="fourth-box"  style="background-image: url('<?php echo get_theme_file_uri( 'assets/images/sky-background.png' ); ?>')">
+        <div id="fourth-box" style="background: url('<?php echo get_theme_file_uri( 'assets/images/sky-background.png' ); ?>'">
             <div class="container">
                 <div class="row">
                     <div id="address-box" class="col-lg-12">
@@ -391,7 +406,6 @@ get_header(); ?>
                                 <div class="social">
                                     <p><a href="https://facebook.com/invsc" class="facebook" target="_blank"><i class="fa fa-facebook-f"></i> <span>Facebook</span></a></p>
                                     <p><a href="https://www.youtube.com/user/mauriciofortunato" target="_blank" class="youtube"><i class="fa fa-youtube"></i> <span>Youtube</span></a></p>
-                                    <p><a href="#" target="_blank" class="google"><i class="fa fa-google"></i> <span>Google fotos</span></a></p>
                                 </div>
 
                             </div>
