@@ -224,14 +224,6 @@ get_header(); ?>
                                         </a>
                                     </button>
                                 </li>
-                                <li role="boletim-tab">
-                                    <button>
-                                        <a href="#boletim">
-                                            <i class="big-icon fa fa-phone"></i>
-                                            <p><span>Boletim mensal</span> <i class="arrow fa fa-angle-right"></i></p>
-                                        </a>
-                                    </button>
-                                </li>
                                 <li class="full-tab" role="full-tab">
                                     <button id="full-tab-button" class="primary">
                                         <a href="events" class="primary">
@@ -298,10 +290,6 @@ get_header(); ?>
                                 }
                                 wp_reset_postdata();
                                 ?>
-                            </div>
-
-                            <div class="tab-item" id="boletim-tab">
-                                <ul>Boletim de fevereiro</ul>
                             </div>
                         </div>
                     </div>
