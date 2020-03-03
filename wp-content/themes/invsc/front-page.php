@@ -70,10 +70,7 @@ get_header(); ?>
 
                         <div class="container">
                             <div class="carousel-caption text-left">
-
                                 <?php echo $post->post_content; ?>
-
-
                             </div>
                         </div>
                     </div>
@@ -93,7 +90,6 @@ get_header(); ?>
             <span class="sr-only">P</span>
         </a>
     </div>
-
 
     <!-- First box
     ================================================== -->

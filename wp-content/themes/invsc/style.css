@@ -373,10 +373,10 @@ header .fixed-top {
 }
 
 .carousel-item {
-    min-height: 40rem;
+    min-height: 50rem;
 }
 .carousel-item > img {
-    min-height: 40rem;
+    min-height: 50rem;
 }
 
 .carousel-caption {
@@ -405,8 +405,6 @@ header .fixed-top {
     margin-top: -89px;
 }
 
-#news-box>.row {
-}
 #first-news, .gray-square {
     background-color: #F4F3F3;
     background-repeat: no-repeat;
@@ -598,9 +596,8 @@ header .fixed-top {
     color: #454545;
 }
 
-
 #event-box .tabs li button #date {
-    background-image: url("http://invsc.localhost/wp-content/themes/invsc/assets/images/calendar-icon-gray.png");
+    background-image: url("./assets/images/calendar-icon-gray.png");
     background-repeat: no-repeat;
     float: left;
     font-size: 33px;

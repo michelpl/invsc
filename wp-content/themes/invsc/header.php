@@ -30,7 +30,6 @@
     <script src="<?php echo get_template_directory_uri() . '/assets/js/tabs.js'; ?>"></script>
     <script src="<?php echo get_template_directory_uri() . '/assets/js/show-hide.js'; ?>"></script>
 
-
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto:100,300" rel="stylesheet">
 <?php wp_head(); ?>
 </head>
@@ -135,7 +134,6 @@
                                     <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
                                         <div class="form-row align-items-center">
                                             <div class="col-sm-12 my-1">
-
                                                 <div class="input-group mb-3">
                                                     <input
                                                         type="search"
@@ -148,9 +146,6 @@
                                                         <button class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></button>
                                                     </div>
                                                 </div>
-
-
-
                                             </div>
                                         </div>
                                     </form>
