@@ -3,14 +3,6 @@
 	<header class="entry-header">
 		<?php if ( 'post' === get_post_type() ) : ?>
 
-
-
-			<div class="entry-meta">
-				<?php
-				echo invsc_time_link();
-				invsc_edit_link();
-				?>
-			</div><!-- .entry-meta -->
 		<?php elseif ( 'page' === get_post_type() && get_edit_post_link() ) : ?>
 			<div class="entry-meta">
 				<?php invsc_edit_link(); ?>
@@ -24,6 +16,13 @@
 		} else {
 			the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' );
 		} ?>
+        <div class="entry-meta" style="margin-bottom: 15px">
+            <?php
+            echo invsc_time_link();
+            invsc_edit_link();
+            ?>
+            <br>
+        </div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">

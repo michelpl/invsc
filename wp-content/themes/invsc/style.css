@@ -946,7 +946,7 @@ aside .widget {
 
 #comment-box .panel {margin: 0!important;padding: 0!important;}
 
-#comment-box .panel-heading {background-color: #40455C;color: #fff;padding: 39px 30px;}
+#comment-box .panel-heading {background-color: #0b0e15;color: #fff;padding: 39px 30px;}
 
 #comment-box .panel-heading h3{
     font-size:24px;
@@ -1118,4 +1118,22 @@ aside .widget {
 
 .sub-menu .row .menu-column {
     margin-bottom: 50px;
+}
+
+a.page-link.active {
+    background-color: #0f1124!important;
+    font-weight: bold!important;
+    color: #fff!important;
+}
+
+.pagination {
+    margin-bottom: 50px;
+}
+
+article {
+    margin-bottom: 50px;
+}
+
+article h3 {
+    font-weight: 400
 }

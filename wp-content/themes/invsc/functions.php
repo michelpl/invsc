@@ -1069,3 +1069,41 @@ function wpt_save_slide_video( $post_id, $post ) {
     endforeach;
 }
 add_action( 'save_post', 'wpt_save_slide_video', 1, 2 );
+
+function pagination_nav() {
+    global $wp_query;
+
+    if ( $wp_query->max_num_pages > 1 ) {
+        $pages = $wp_query->max_num_pages;
+        ?>
+
+        <nav aria-label='Page navigation example'>
+            <ul class='pagination'>
+
+                <li class='page-item'><?php previous_posts_link( 'Página anterior' ); ?></li>
+                    <?php
+                        for ($i = 0; $i < $pages; $i++) {
+                            $page = $i + 1;
+                            $class = '';
+                            if ($wp_query->query['paged'] === $page) {
+                                $class = 'active';
+                            }
+
+                    ?>
+                            <li class='page-item'><a class='page-link <?php echo $class; ?>' href="<?php echo get_pagenum_link($page); ?>"><?php echo $page; ?></a></li>
+                    <?php
+                        }
+                    ?>
+                <li class='page-item'><?php next_posts_link( 'Próxima página'); ?></li>
+             </ul>
+        </nav>
+        <?php
+    }
+}
+
+add_filter('next_posts_link_attributes', 'posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+function posts_link_attributes() {
+    return 'class="page-link"';
+}

@@ -41,6 +41,8 @@
                     <div class="col-lg-9 gray-square">
                         <div id="post-text" class="container" style="height: auto;">
                             <h2><?php the_title(); ?></h2>
+                            <p><?php invsc_posted_on(); ?></p>
+                            <hr>
                             <p>
                                 <?php the_content(); ?>
                             </p>

@@ -43,15 +43,12 @@ $bg = "style='background-color:#3d3f56'";
                                     ];
                                 query_posts($args); ?>
                                 <!-- the loop -->
+
                                 <?php if ( have_posts() ) : while (have_posts()) : the_post();
                                     get_template_part( 'template-parts/post/content', 'excerpt' );
                                     echo '<hr>';
                                 endwhile;
-                                    the_posts_pagination( array(
-                                        'prev_text'          => 'Página anterior',
-                                        'next_text'          => 'Próxima página',
-                                        'before_page_number' => 'Página'
-                                    ) );
+                                    pagination_nav();
                                 else : ?>
                                     <!-- No posts found -->
                                 <?php endif; ?>

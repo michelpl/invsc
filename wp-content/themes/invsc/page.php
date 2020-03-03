@@ -7,7 +7,6 @@ if(!has_post_thumbnail()){
     $bg = "style='background-color:#3d3f56'";
 }
 ?>
-
     <main role="main">
         <div id="myCarousel" class="carousel slide" data-ride="carousel" <?php echo $height; ?>>
             <ol class="carousel-indicators">
