@@ -18,6 +18,10 @@
     .tab-content .tab-item ul li .title .btn{
         display:none;
     }
+
+    .menu .menu-sub-menu-1-container {
+        display: none;
+    }
 }
 
 @media (min-width: 415px){
@@ -28,6 +32,7 @@
     .carousel-caption.text-left p {
         margin-top: 2rem!important;
     }
+
 }
 
 @media (min-width: 767px){
@@ -95,6 +100,9 @@
 
     #about {
         width: 51%!important;
+    }
+    .menu .menu-sub-menu-1-container {
+        display: block;
     }
 }
 
@@ -215,7 +223,7 @@ ul {
 }
 
 .bg-dark {
-    background-color: #0f1224 !important;
+    background-color: #0B0E16 !important;
 }
 
 .primary-shadow {
@@ -227,6 +235,11 @@ ul {
 .primary {
     background-color: #192a56!important;
     color: #E0E1E8;
+}
+
+header .fixed-top {
+    max-height: 100%!important;
+    overflow:auto;
 }
 
 #navbarHeader {
@@ -292,6 +305,7 @@ ul {
 
 .sub-menu {
     width: 100%;
+    position: relative;
 }
 
 .sub-menu li {
@@ -342,6 +356,20 @@ ul {
     background-color: transparent;
     outline: none;
     color: #fff;
+}
+
+.sub-menu .close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    position: absolute;
+    width: auto;
+    bottom: 8%;
+    right: 0.1%;
 }
 
 .carousel-item {
@@ -425,7 +453,7 @@ ul {
 #other-news ul li .container {
     margin: 0;
     padding: 0;
-    background-color: #383b52;
+    background-color: #0B0E16;
     height: 180px;
 }
 
@@ -1089,4 +1117,8 @@ aside .widget {
     background-color: #0f1124;
     margin-top: -102px;
     height: 15px;
+}
+
+.sub-menu .row .menu-column {
+    margin-bottom: 50px;
 }

@@ -77,9 +77,10 @@
         </div>
 
         <div id="hide-menu" class="container show-hide-container" style="display: none;">
-            <div class="sub-menu float-left " >
-                <div class="float-left box">
-                    <?php
+            <div class="sub-menu float-left ">
+                <div class="row">
+                    <div class="box col-lg-2 col-md-2 menu-column">
+                        <?php
                         $menu = wp_get_nav_menu_object("sub-menu-1" );
                         if ($menu->count > 0) {
 
@@ -91,67 +92,95 @@
                                 'menu_class'     => 'list-unstyled sub-menu-ul',
                             ]);
                         }
-                    ?>
-                </div>
-                <div class="float-left box">
-                    <?php
-                    $menu = wp_get_nav_menu_object("sub-menu-2" );
-                    if ($menu->count > 0) {
+                        ?>
+                    </div>
+                    <div class="col-lg-2 col-md-2 box menu-column">
+                        <?php
+                        $menu = wp_get_nav_menu_object("sub-menu-2" );
+                        if ($menu->count > 0) {
 
-                        echo "<h4>" . $menu->name . "</h4>";
-                        echo "<hr>";
+                            echo "<h4>" . $menu->name . "</h4>";
+                            echo "<hr>";
 
-                        wp_nav_menu([
-                            'theme_location' => 'sub-menu-2',
-                            'menu_class'     => 'list-unstyled sub-menu-ul',
-                        ]);
-                    }
-                    ?>
-                </div>
-                <div class="float-left box">
-                    <?php
-                    $menu = wp_get_nav_menu_object("sub-menu-3" );
-                    if ($menu->count > 0) {
+                            wp_nav_menu([
+                                'theme_location' => 'sub-menu-2',
+                                'menu_class'     => 'list-unstyled sub-menu-ul',
+                            ]);
+                        }
+                        ?>
+                    </div>
+                    <div class="col-lg-2 col-md-2 box menu-column">
+                        <?php
+                        $menu = wp_get_nav_menu_object("sub-menu-3" );
+                        if ($menu->count > 0) {
 
-                        echo "<h4>" . $menu->name . "</h4>";
-                        echo "<hr>";
+                            echo "<h4>" . $menu->name . "</h4>";
+                            echo "<hr>";
 
-                        wp_nav_menu([
-                            'theme_location' => 'sub-menu-3',
-                            'menu_class'     => 'list-unstyled sub-menu-ul',
-                        ]);
-                    }
-                    ?>
-                </div>
-                <div class="float-left box">
-                    <?php
-                    /*$menu = wp_get_nav_menu_object("sub-menu-4" );
-                    if ($menu->count > 0) {
+                            wp_nav_menu([
+                                'theme_location' => 'sub-menu-3',
+                                'menu_class'     => 'list-unstyled sub-menu-ul',
+                            ]);
+                        }
+                        ?>
+                    </div>
 
-                        echo "<h4>" . $menu->name . "</h4>";
-                        echo "<hr>";
+                    <div class="col-lg-2 col-md-2 box menu-column">
+                        <h4>Buscar no site</h4><hr>
+                        <div class="menu-sub-menu-3-container">
+                            <ul id="menu-sub-menu-4" class="list-unstyled sub-menu-ul">
+                                <li id="menu-item-131" class="menu-item">
+                                    <?php $unique_id = esc_attr( uniqid( 'search-form-' ) ); ?>
 
-                        wp_nav_menu([
-                            'theme_location' => 'sub-menu-4',
-                            'menu_class'     => 'list-unstyled sub-menu-ul',
-                        ]);
-                    }*/
-                    get_search_form();
-                    ?>
+                                    <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                        <div class="form-row align-items-center">
+                                            <div class="col-sm-12 my-1">
+
+                                                <div class="input-group mb-3">
+                                                    <input
+                                                        type="search"
+                                                        id="<?php echo $unique_id; ?>"
+                                                        class="form-control"
+                                                        placeholder="Buscar"
+                                                        value="<?php echo get_search_query(); ?>" name="s"
+                                                    >
+                                                    <div class="input-group-append">
+                                                        <button class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></button>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 box menu-column">
+                        <h4>INVSC nas redes sociais!</h4><hr>
+                        <div class="menu-sub-menu-3-container">
+                            <ul id="menu-sub-menu-4" class="list-unstyled sub-menu-ul">
+                                <li class="menu-item facebook">
+                                    <a href="https://facebook.com/invsc" target="_blank" class="text-muted facebook">Facebook</a>
+                                </li>
+                                <li class="menu-item youtube">
+                                    <a href="https://www.youtube.com/user/mauriciofortunato" target="_blank" class="text-muted youtube">Youtube</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="close">
+                        <button class="show-hide" data="hide-menu">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="close float-right">
-                    <button class="show-hide" data="hide-menu">
-                        <i class="fa fa-times"></i>
-                    </button>
-                </div>
-                <div class="social float-right box">
-                    <h4>Siga-nos</h4>
-                    <ul class="list-unstyled">
-                        <li><p>INVSC nas redes sociais!</p></li>
-                        <li><a href="https://facebook.com/invsc" target="_blank" class="text-muted facebook">Facebook</a></li>
-                        <li><a href="https://www.youtube.com/user/mauriciofortunato" target="_blank" class="text-muted youtube">Youtube</a></li>
-                    </ul>
-                </div>
+
+
             </div>
         </div>
     </div>
