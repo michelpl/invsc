@@ -422,7 +422,7 @@ header .fixed-top {
 }
 
 #first-news-text a{
-    color: #f5f5f5;
+    color: #272B4F;
 }
 
 #first-news .read-more {
@@ -449,18 +449,18 @@ header .fixed-top {
 #other-news ul li .container {
     margin: 0;
     padding: 0;
-    background-color: #0B0E16;
+    background-color: #e6e6e6;
     height: 180px;
 }
 
 #other-news ul li .container p {
-    height: 96px;
+    height: 76px;
     overflow: hidden;
 }
 
 #other-news ul li .container p a{
     padding: 0px 15px;
-    color: #fff;
+    color: #272B4F;
     float:left;
 }
 
@@ -542,7 +542,7 @@ header .fixed-top {
 }
 
 #other-news ul li .container h3 {
-    padding: 38px 0 0 0;
+    padding: 28px 0 0 0;
     width: 92%;
 }
 
@@ -1142,4 +1142,8 @@ article {
 
 article h3 {
     font-weight: 400
+}
+
+.sidestyle .text-muted {
+    color: #5a5a5a!important;
 }

@@ -316,15 +316,15 @@ function invsc_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Barra lateral páginas internas', 'invsc' ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'C.', 'invsc' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'description'   => __( 'Barra lateral.', 'invsc' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s sidestyle">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 1', 'invsc' ),
+		'name'          => __( 'Rodapé 1', 'invsc' ),
 		'id'            => 'sidebar-2',
 		'description'   => __( 'Add widgets here to appear in your footer.', 'invsc' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -334,7 +334,7 @@ function invsc_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 2', 'invsc' ),
+		'name'          => __( 'Rodapé 2', 'invsc' ),
 		'id'            => 'sidebar-3',
 		'description'   => __( 'Add widgets here to appear in your footer.', 'invsc' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -343,7 +343,7 @@ function invsc_widgets_init() {
 		'after_title'   => '</h4><hr>',
 	) );
     register_sidebar( array(
-        'name'          => __( 'Footer 3', 'invsc' ),
+        'name'          => __( 'Rodapé 3', 'invsc' ),
         'id'            => 'sidebar-4',
         'description'   => __( 'Add widgets here to appear in your footer.', 'invsc' ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -352,7 +352,7 @@ function invsc_widgets_init() {
         'after_title'   => '</h4><hr>',
     ) );
     register_sidebar( array(
-        'name'          => __( 'Programação: domingos', 'invsc' ),
+        'name'          => __( 'Rodapé 4', 'invsc' ),
         'id'            => 'sidebar-5',
         'description'   => __( 'Add widgets here to appear in your footer.', 'invsc' ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -361,7 +361,7 @@ function invsc_widgets_init() {
         'after_title'   => '</h4><hr>',
     ) );
     register_sidebar( array(
-        'name'          => __( 'Programação: terças', 'invsc' ),
+        'name'          => __( 'Rodapé 5', 'invsc' ),
         'id'            => 'sidebar-6',
         'description'   => __( 'Add widgets here to appear in your footer.', 'invsc' ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -370,7 +370,7 @@ function invsc_widgets_init() {
         'after_title'   => '</h4><hr>',
     ) );
     register_sidebar( array(
-        'name'          => __( 'Programação: quintas', 'invsc' ),
+        'name'          => __( 'Rodapé 6', 'invsc' ),
         'id'            => 'sidebar-7',
         'description'   => __( 'Add widgets here to appear in your footer.', 'invsc' ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -379,7 +379,7 @@ function invsc_widgets_init() {
         'after_title'   => '</h4><hr>',
     ) );
     register_sidebar( array(
-        'name'          => __( 'Programação: sábados', 'invsc' ),
+        'name'          => __( 'Rodapé 7', 'invsc' ),
         'id'            => 'sidebar-8',
         'description'   => __( 'Add widgets here to appear in your footer.', 'invsc' ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
