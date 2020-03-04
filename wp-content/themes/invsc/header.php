@@ -37,7 +37,7 @@
 <body>
 
 <header>
-    <div class="bg-dark fixed-top">
+    <div class="bg-dark fixed-top sub-menu-border">
         <div class="container">
             <div class="row main-menu" style="margin: 0">
                 <div class="col-lg-12">
@@ -76,7 +76,7 @@
         </div>
 
         <div id="hide-menu" class="container show-hide-container" style="display: none;">
-            <div class="sub-menu float-left ">
+            <div class="sub-menu float-left">
                 <div class="row">
                     <div class="box col-lg-2 col-md-2 menu-column">
                         <?php

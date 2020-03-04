@@ -1122,6 +1122,10 @@ aside .widget {
     margin-bottom: 50px;
 }
 
+.sub-menu-border {
+    border-bottom: 1px solid #818181;
+}
+
 a.page-link.active {
     background-color: #0f1124!important;
     font-weight: bold!important;
