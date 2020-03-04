@@ -1085,7 +1085,9 @@ function pagination_nav() {
                         for ($i = 0; $i < $pages; $i++) {
                             $page = $i + 1;
                             $class = '';
-                            if ($wp_query->query['paged'] === $page) {
+                            $currentPage = $wp_query->query['paged'];
+
+                            if ((!isset($currentPage) && $page == 1) || $currentPage == $page) {
                                 $class = 'active';
                             }
 

@@ -45,12 +45,7 @@
                                         echo '<hr>';
                                     endwhile; // End of the loop.
 
-                                    // Previous/next page navigation.
-                                    the_posts_pagination( array(
-                                        'prev_text'          => 'Página anterior',
-                                        'next_text'          => 'Próxima página',
-                                        'before_page_number' => 'Página'
-                                    ) );
+                                    pagination_nav();
                                 else : ?>
 
                                     <p>Nenhum resultado encontrado para sua busca</p>
