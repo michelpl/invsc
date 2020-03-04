@@ -1,7 +1,7 @@
 <?php
 get_header();
 $height = "style='height:250px'";
-$bg = "style='background-color:#3d3f56'";
+$bg = "style='background-color:#474747'";
 ?>
 
     <main role="main">

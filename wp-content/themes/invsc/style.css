@@ -52,7 +52,7 @@
     }
 
     h2 {
-        width: 59%!important;
+        width: 90%!important;
     }
 
     .logoSlide {
@@ -107,8 +107,6 @@
 }
 
 @media (min-width: 1100px){
-
-
     #all-news p a {
         font-size: 26px!important;
         margin: 50px 0 0 40px!important;
@@ -149,7 +147,7 @@ h3 {
 h4 {
     font-size: 14px;
     font-weight: 700;
-    color: #7f8188;
+    color: #fff;
 }
 
 ul {
@@ -182,7 +180,7 @@ ul {
 }
 
 .text-muted {
-    color:#8F8F8F!Important;
+    color: #b7b7b7!Important;
 }
 
 .color-primary {
@@ -466,7 +464,9 @@ header .fixed-top {
     float:left;
 }
 
-#all-news {background-color: #192a55;height: 180px;}
+#all-news {
+    height: 180px;
+}
 
 #all-news p {
     margin: 0;
@@ -476,7 +476,7 @@ header .fixed-top {
     color: white!important;
     font-size: 20px;
     width: 150px;
-    font-weight: 800;
+    font-weight: bold;
     padding: 0;
     float: left;
     margin: 62px 0 0 32px;
@@ -547,7 +547,7 @@ header .fixed-top {
 }
 
 #other-news ul li .container h3 a{
-    background-color: #313457;
+    background-color: #474747;
     color: #fff;
     font-weight: bold!important;
     text-transform: uppercase;
@@ -833,7 +833,9 @@ li.active {
 
 #address-box .address .text-box {float: left;padding: 25px;width: 100%;}
 
-
+#address-box h2 {
+    padding-left: 5px;
+}
 
 #address-box .address .text-box div i {
     font-size: 30px;
@@ -903,7 +905,7 @@ li.active {
 #pre-footer {
     height: 15px;
     width: 100%;
-    background-color: #474747;
+    background-color: #474748;
 }
 
 footer {

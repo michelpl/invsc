@@ -113,20 +113,28 @@ get_header(); ?>
                                     if (strlen($post->post_excerpt) < 3) {
                                         $post->post_excerpt = $post->post_content;
                                     }
+                                    $style = '';
+                                    $font =  'color: #fff';
+
+                                    if (strlen(get_the_post_thumbnail_url()) > 0) {
+                                        $background = "background-image: url('" . get_the_post_thumbnail_url() . "')";
+                                    } else {
+                                        $font = "color:#0B0E16";
+                                    }
                                     ?>
 
-                                    <div id="first-news" class="col-lg-6 thumb-cover" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
-                                        <!--img src="<?php echo get_theme_file_uri( 'assets/images/news-flag.png'); ?>" style="position: absolute"/-->
+                                    <div id="first-news" class="col-lg-6 thumb-cover" style="<?php echo $background; ?>">
+                                        <img src="<?php echo get_theme_file_uri( './assets/images/news-flag.png'); ?>" style="position: absolute; left: 0">
                                         <div id="first-news-text" class="container">
-                                            <h2><a href="<?php echo get_permalink(); ?>" class="color-primary"><?php echo $post->post_title; ?></a></h2>
+                                            <h2><a href="<?php echo get_permalink(); ?>" class="color-primary" style="<?php echo $font; ?>"><?php echo $post->post_title; ?></a></h2>
                                             <p>
-                                                <a href="<?php echo get_permalink(); ?>"><?php echo $post->post_excerpt; ?></a>
+                                                <a href="<?php echo get_permalink(); ?>" style="<?php echo $font; ?>"><?php echo $post->post_excerpt; ?></a>
                                             </p>
 
                                         </div>
                                         <div class="container">
                                             <div class="addthis_inline_share_toolbox float-left"></div>
-                                            <a class="read-more color-primary float-right" href="<?php echo get_permalink(); ?>">Ler post completo <i class="fa fa-angle-right"></i></a>
+                                            <a class="read-more color-primary float-right" href="<?php echo get_permalink(); ?>" style="<?php echo $font; ?>">Ler post completo <i class="fa fa-angle-right"></i></a>
                                         </div>
                                     </div>
 
@@ -166,7 +174,7 @@ get_header(); ?>
                                 }
                             ?>
                             <li class="col-lg-6">
-                                <div id="all-news">
+                                <div id="all-news" class="bg-dark">
                                     <p><a href="<?php echo get_category_link(4); ?>">VER MAIS NOTÍCIAS
                                             <i class="fa fa-angle-right"></i></a>
                                     </p>
